@@ -24,12 +24,16 @@ class Stack(object):
         pass
 
     @abstractmethod
-    def isEmpty(self):
+    def is_empty(self):
         pass
 
     @abstractmethod
     def size(self):
         pass
+
+    @staticmethod
+    def create():
+        return LinkedListStack()
 
 
 class LinkedListStack(Stack):
@@ -46,7 +50,7 @@ class LinkedListStack(Stack):
         self.N += 1
 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             return None
         old_first = self.first
         if old_first.nextNode is None:
@@ -55,7 +59,7 @@ class LinkedListStack(Stack):
         self.N -= 1
         return old_first.item
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.N == 0
 
     def size(self):
@@ -89,7 +93,7 @@ class ArrayStack(Stack):
             self.resize(len(self.s) / 2)
         return value
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.N == 0
 
     def size(self):
