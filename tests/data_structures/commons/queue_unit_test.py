@@ -1,6 +1,6 @@
 import unittest
 
-from pyalgs.data_structures.commons.queue import LinkedListQueue, Queue
+from pyalgs.data_structures.commons.queue import LinkedListQueue, Queue, ArrayQueue
 
 
 class QueueUnitTest(unittest.TestCase):
@@ -44,7 +44,7 @@ class QueueUnitTest(unittest.TestCase):
         self.assertTrue(queue.is_empty())
 
     def test_ArrayQueue(self):
-        queue = LinkedListQueue()
+        queue = ArrayQueue()
         queue.enqueue(10)
         self.assertEqual(1, queue.size())
         self.assertFalse(queue.is_empty())

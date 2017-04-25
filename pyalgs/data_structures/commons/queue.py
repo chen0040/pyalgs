@@ -109,8 +109,8 @@ class ArrayQueue(Queue):
         for i in range(self.head, self.tail):
             tmp[i-self.head] = self.s[i]
         self.s = tmp
-        self.head = self.head - self.tail
-        self.tail = 0
+        self.tail = self.tail - self.head
+        self.head = 0
 
     def size(self):
         return self.tail - self.head
@@ -123,7 +123,7 @@ class ArrayQueue(Queue):
             return None
 
         deleted = self.s[self.head]
-        self.head -= 1
+        self.head += 1
         if self.size() == len(self.s) // 4:
             self.resize(len(self.s) // 2)
         return deleted
