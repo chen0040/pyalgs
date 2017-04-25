@@ -12,6 +12,7 @@ class BinarySearchTreeUnitTest(unittest.TestCase):
         bst.put("three", 3)
         bst.put("six", 6)
         bst.put("ten", 10)
+        bst.put("ten", 10)
 
         self.assertEqual(1, bst.get("one"))
         self.assertEqual(2, bst.get("two"))
@@ -34,6 +35,14 @@ class BinarySearchTreeUnitTest(unittest.TestCase):
         bst.delete("three")
         self.assertFalse(bst.contains_key("three"))
         self.assertEqual(2, bst.size())
+
+        for i in range(100):
+            bst.put(str(i), i)
+            self.assertEqual(i, bst.get(str(i)))
+
+        for i in range(100):
+            bst.delete(str(i))
+            self.assertFalse(bst.contains_key(str(i)))
 
 if __name__ == '__main__':
     unittest.main()
