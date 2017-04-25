@@ -102,8 +102,8 @@ class ArrayStack(Stack):
     def pop(self):
         value = self.s[self.N-1]
         self.N -= 1
-        if self.N == len(self.s) / 4:
-            self.resize(len(self.s) / 2)
+        if self.N == len(self.s) // 4:
+            self.resize(len(self.s) // 2)
         return value
 
     def is_empty(self):

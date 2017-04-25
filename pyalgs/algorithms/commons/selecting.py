@@ -13,7 +13,7 @@ class BinarySelection(object):
             hi = len(a) - 1
 
         while lo <= hi:
-            mid = lo + (hi - lo) / 2
+            mid = lo + (hi - lo) // 2
             if less(x, a[mid]):
                 hi = mid - 1
             elif less(a[mid], x):

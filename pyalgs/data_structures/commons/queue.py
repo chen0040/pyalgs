@@ -124,6 +124,6 @@ class ArrayQueue(Queue):
 
         deleted = self.s[self.head]
         self.head -= 1
-        if self.size() == len(self.s) / 4:
-            self.resize(len(self.s) / 2)
+        if self.size() == len(self.s) // 4:
+            self.resize(len(self.s) // 2)
         return deleted

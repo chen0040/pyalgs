@@ -36,7 +36,7 @@ class ShellSort(object):
     def sort(a):
         N = len(a)
         H = 0
-        while H < N / 3:
+        while H < N // 3:
             H = 3 * H + 1
 
         for h in reversed(range(1, H)):
@@ -70,7 +70,7 @@ class MergeSort(object):
             InsertionSort.sort(a, lo, hi)
             return
 
-        mid = lo + (hi - lo) / 2
+        mid = lo + (hi - lo) // 2
         MergeSort._sort(a, aux, lo, mid)
         MergeSort._sort(a, aux, mid + 1, hi)
         MergeSort._merge(a, aux, lo, mid, hi)

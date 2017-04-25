@@ -19,7 +19,7 @@ class MinPQ(object):
 
     def swim(self, k):
         while k > 1:
-            parent = k / 2
+            parent = k // 2
             if less(self.pq[k], self.pq[parent]):
                 exchange(self.pq, k, parent)
                 k = parent
@@ -33,8 +33,8 @@ class MinPQ(object):
         key = self.pq[1]
         exchange(self.pq, 1, self.N)
         self.N -= 1
-        if self.N == len(self.pq) / 4:
-            self.resize(len(self.pq) / 2)
+        if self.N == len(self.pq) // 4:
+            self.resize(len(self.pq) // 2)
 
         self.sink(self.pq, 1, self.N)
         return key
@@ -100,7 +100,7 @@ class MaxPQ(object):
 
     def swim(self, k):
         while k > 1:
-            parent = k / 2
+            parent = k // 2
             if greater(self.pq[k], self.pq[parent]):
                 exchange(self.pq, k, parent)
                 k = parent
@@ -114,8 +114,8 @@ class MaxPQ(object):
         key = self.pq[1]
         exchange(self.pq, 1, self.N)
         self.N -= 1
-        if self.N == len(self.pq) / 4:
-            self.resize(len(self.pq) / 2)
+        if self.N == len(self.pq) // 4:
+            self.resize(len(self.pq) // 2)
 
         self.sink(self.pq, 1, self.N)
         return key
