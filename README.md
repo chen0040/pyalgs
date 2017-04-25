@@ -145,6 +145,38 @@ print bst.is_empty()
 bst.delete("one")
 </pre>
 
+### Undirected Graph
+
+<pre>
+from pyalgs.data_structures.graphs.graph import Graph
+G = Graph(100)
+
+G.add_edge(1, 2)
+G.add_edge(1, 3)
+
+print([i for i in G.adj(1)])
+print([i for i in G.adj(2)])
+print([i for i in G.adj(3)])
+
+print(G.vertex_count())
+</pre>
+
+### Directed Graph
+
+<pre>
+from pyalgs.data_structures.graphs.graph import Digraph
+G = Digraph(100)
+
+G.add_edge(1, 2)
+G.add_edge(1, 3)
+
+print([i for i in G.adj(1)])
+print([i for i in G.adj(2)])
+print([i for i in G.adj(3)])
+
+print(G.vertex_count())
+</pre>
+
 ## Algorithms
 
 ### Union Find
@@ -158,10 +190,10 @@ uf.union(1, 3)
 uf.union(2, 4)
 uf.union(1, 5)
 
-self.assertTrue(uf.connected(1, 3))
-self.assertTrue(uf.connected(3, 5))
-self.assertFalse(uf.connected(1, 2))
-self.assertFalse(uf.connected(1, 4))
+print(uf.connected(1, 3))
+print(uf.connected(3, 5))
+print(uf.connected(1, 2))
+print(uf.connected(1, 4))
 </pre>
 
 ### Sorting
@@ -175,7 +207,7 @@ from pyalgs.algorithms.commons.sorting import SelectionSort
 
 a = [4, 2, 1]
 SelectionSort.sort(a)
-print a
+print(a)
 </pre>
 
 #### Insertion Sort
@@ -185,7 +217,7 @@ from pyalgs.algorithms.commons.sorting import InsertionSort
 
 a = [4, 2, 1]
 InsertionSort.sort(a)
-print a
+print(a)
 </pre>
 
 #### Shell Sort
@@ -195,7 +227,7 @@ from pyalgs.algorithms.commons.sorting import ShellSort
 
 a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 ShellSort.sort(a)
-print a
+print(a)
 </pre>
 
 #### Merge Sort
@@ -205,7 +237,7 @@ from pyalgs.algorithms.commons.sorting import MergeSort
 
 a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 MergeSort.sort(a)
-print a
+print(a)
 </pre>
 
 #### Quick Sort
@@ -215,7 +247,7 @@ from pyalgs.algorithms.commons.sorting import QuickSort
 
 a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 QuickSort.sort(a)
-print a
+print(a)
 </pre>
 
 #### 3-Ways Quick Sort
@@ -225,7 +257,7 @@ from pyalgs.algorithms.commons.sorting import ThreeWayQuickSort
 
 a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 ThreeWayQuickSort.sort(a)
-print a
+print(a)
 </pre>
 
 ### Selection
@@ -251,6 +283,6 @@ from pyalgs.algorithms.commons.shuffling import KnuthShuffle
 
 a = [1, 2, 13, 22, 123]
 KnuthShuffle.shuffle(a)
-print a
+print(a)
 </pre>
         
