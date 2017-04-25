@@ -65,5 +65,8 @@ class QueueUnitTest(unittest.TestCase):
         for i in range(100):
             queue.enqueue(i)
 
+        for i in range(100):
+            queue.dequeue()
+
 if __name__ == '__main__':
     unittest.main()

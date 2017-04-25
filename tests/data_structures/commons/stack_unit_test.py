@@ -60,6 +60,9 @@ class ArrayStackTest(unittest.TestCase):
         for i in range(100):
             stack.push(i)
 
+        for i in range(100):
+            stack.pop()
+
 
 if __name__ == '__main__':
     unittest.main()
