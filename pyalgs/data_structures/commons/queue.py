@@ -28,6 +28,10 @@ class Queue(object):
     def create():
         return LinkedListQueue()
 
+    @abstractmethod
+    def iterate(self):
+        pass
+
 
 class Node(object):
 
@@ -46,6 +50,13 @@ class LinkedListQueue(Queue):
 
     def size(self):
         return self.N
+
+    def iterate(self):
+        x = self.first
+        while x is not None:
+            value = x.value
+            x = x.nextNode
+            yield value
 
     def enqueue(self, item):
         old_last = self.last
@@ -71,12 +82,19 @@ class LinkedListQueue(Queue):
 
 
 class ArrayQueue(Queue):
+
     head = 0
     tail = 0
     s = []
 
     def __init__(self, capacity=10):
         self.s = [0] * capacity
+
+    def iterate(self):
+        if self.is_empty():
+            return
+        for i in range(self.head, self.tail):
+            yield self.s[i]
 
     def enqueue(self, item):
         self.s[self.tail] = item

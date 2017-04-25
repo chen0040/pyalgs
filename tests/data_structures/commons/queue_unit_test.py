@@ -13,6 +13,9 @@ class QueueUnitTest(unittest.TestCase):
         queue.enqueue(20)
         self.assertEqual(2, queue.size())
         queue.enqueue(30)
+
+        print [i for i in queue.iterate()]
+
         self.assertEqual(3, queue.size())
         self.assertEqual(10, queue.dequeue())
         self.assertEqual(2, queue.size())
@@ -29,6 +32,9 @@ class QueueUnitTest(unittest.TestCase):
         queue.enqueue(20)
         self.assertEqual(2, queue.size())
         queue.enqueue(30)
+
+        print [i for i in queue.iterate()]
+
         self.assertEqual(3, queue.size())
         self.assertEqual(10, queue.dequeue())
         self.assertEqual(2, queue.size())

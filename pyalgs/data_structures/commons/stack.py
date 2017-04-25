@@ -31,6 +31,10 @@ class Stack(object):
     def size(self):
         pass
 
+    @abstractmethod
+    def iterate(self):
+        pass
+
     @staticmethod
     def create():
         return LinkedListStack()
@@ -65,6 +69,13 @@ class LinkedListStack(Stack):
     def size(self):
         return self.N
 
+    def iterate(self):
+        x = self.first
+        while x is not None:
+            value = x.item
+            x = x.nextNode
+            yield value
+
 
 class ArrayStack(Stack):
     """ Array implementation of stack
@@ -98,3 +109,9 @@ class ArrayStack(Stack):
 
     def size(self):
         return self.N
+
+    def iterate(self):
+        if self.is_empty():
+            return
+        for i in reversed(range(self.N)):
+            yield self.s[i]

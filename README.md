@@ -13,6 +13,8 @@ stack = Stack.create()
 stack.push(10)
 stack.push(1)
 
+print [i for i in stack.iterate()]
+
 print stack.is_empty()
 print stack.size()
 
@@ -30,6 +32,8 @@ queue = Queue.create()
 queue.enqueue(10)
 queue.enqueue(20)
 queue.enqueue(30)
+
+print [i for i in queue.iterate()]
 
 print queue.size()
 print queue.is_empty()

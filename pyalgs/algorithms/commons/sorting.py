@@ -17,18 +17,14 @@ class SelectionSort(object):
 
 
 class InsertionSort(object):
-    @staticmethod
-    def sort(a):
-        N = len(a)
-        for i in range(N):
-            for j in reversed(range(1, i + 1)):
-                if util.less(a[j], a[j - 1]):
-                    util.exchange(a, j, j - 1)
-                else:
-                    break
 
     @staticmethod
-    def sort(a, lo, hi):
+    def sort(a, lo=None, hi=None):
+        if lo is None:
+            lo = 0
+        if hi is None:
+            hi = len(a)-1
+
         for i in range(lo, hi + 1):
             for j in reversed(range(1, i + 1)):
                 if util.less(a[j], a[j - 1]):
