@@ -2,7 +2,7 @@
 
 Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.princeton.edu/home/) and Robert Sedgwick's Algorithms course using Python (Part I and Part II)
 
-[![Coverage Status](https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master)](https://coveralls.io/github/chen0040/pyalgs?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master)](https://coveralls.io/github/chen0040/pyalgs?branch=master) [![Build Status](https://travis-ci.org/chen0040/pyalgs.svg?branch=master)](https://travis-ci.org/chen0040/pyalgs)
 
 ## Data Structure
 
@@ -181,5 +181,17 @@ from pyalgs.algorithms.commons.util import is_sorted
 a = [1, 2, 13, 22, 123]
 assert is_sorted(a)
 print BinarySelection.index_of(a, 13) 
+
+### Shuffle
+
+#### Knuth Shuffle
+
+<pre>
+from pyalgs.algorithms.commons.shuffling import KnuthShuffle
+
+a = [1, 2, 13, 22, 123]
+KnuthShuffle.shuffle(a)
+print a
+</pre>
         
 </pre>
