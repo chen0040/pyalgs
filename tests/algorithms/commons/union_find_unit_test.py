@@ -30,7 +30,8 @@ class QuickFindUnitTest(unittest.TestCase):
         self.assertFalse(uf.connected(1, 2))
         self.assertFalse(uf.connected(1, 4))
 
-class QuickFindUnitTest(unittest.TestCase):
+
+class QuickUnionUnitTest(unittest.TestCase):
     def test_find(self):
         uf = QuickUnion(10)
 
@@ -42,5 +43,7 @@ class QuickFindUnitTest(unittest.TestCase):
         self.assertTrue(uf.connected(3, 5))
         self.assertFalse(uf.connected(1, 2))
         self.assertFalse(uf.connected(1, 4))
+
+
 if __name__ == '__main__':
     unittest.main()
