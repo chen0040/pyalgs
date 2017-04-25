@@ -105,6 +105,23 @@ print deleted
 
 ## Algorithms
 
+### Union Find
+
+<pre>
+from pyalgs.algorithms.commons.union_find import UnionFind
+
+uf = UnionFind.create(10)
+
+uf.union(1, 3)
+uf.union(2, 4)
+uf.union(1, 5)
+
+self.assertTrue(uf.connected(1, 3))
+self.assertTrue(uf.connected(3, 5))
+self.assertFalse(uf.connected(1, 2))
+self.assertFalse(uf.connected(1, 4))
+</pre>
+
 ### Sorting
 
 The sorting algorithms sort an array in ascending order
@@ -181,6 +198,7 @@ from pyalgs.algorithms.commons.util import is_sorted
 a = [1, 2, 13, 22, 123]
 assert is_sorted(a)
 print BinarySelection.index_of(a, 13) 
+</pre>
 
 ### Shuffle
 
@@ -194,4 +212,3 @@ KnuthShuffle.shuffle(a)
 print a
 </pre>
         
-</pre>
