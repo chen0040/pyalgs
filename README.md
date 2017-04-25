@@ -103,6 +103,27 @@ deleted = pq.del_max()
 print deleted
 </pre>
 
+### Symbol Table using Binary Search Tree
+
+<pre>
+from pyalgs.data_structures.commons.binary_search_tree import BinarySearchTree
+bst = BinarySearchTree.create()
+
+bst.put("one", 1)
+bst.put("two", 2)
+bst.put("three", 3)
+bst.put("six", 6)
+bst.put("ten", 10)
+
+print bst.get("one"))
+print bst.contains_key("two")
+
+print bst.size()
+print bst.is_empty()
+
+bst.delete("one")
+</pre>
+
 ## Algorithms
 
 ### Union Find
