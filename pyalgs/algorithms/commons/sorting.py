@@ -140,3 +140,33 @@ class QuickSort(object):
 
         util.exchange(a, lo, j)
         return j
+
+
+class ThreeWayQuickSort(object):
+    @staticmethod
+    def sort(a, lo=None, hi=None):
+        if lo is None:
+            lo = 0
+        if hi is None:
+            hi = len(a) - 1
+
+        if lo >= hi:
+            return
+
+        i = lo
+        lt = lo
+        gt = hi
+
+        while i <= gt:
+            if util.less(a[i], a[lo]):
+                util.exchange(a, i, lt)
+                i += 1
+                lt += 1
+            elif util.less(a[lo], a[i]):
+                util.exchange(a, i, gt)
+                gt -= 1
+            else:
+                i += 1
+
+        ThreeWayQuickSort.sort(a, lo, lt - 1)
+        ThreeWayQuickSort.sort(a, gt + 1, hi)
