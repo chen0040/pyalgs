@@ -2,7 +2,7 @@
 
 Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.princeton.edu/home/) and Robert Sedgwick's Algorithms course using Python (Part I and Part II)
 
-[![Coverage Status](https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master)](https://coveralls.io/github/chen0040/pyalgs?branch=master) [![Build Status](https://travis-ci.org/chen0040/pyalgs.svg?branch=master)](https://travis-ci.org/chen0040/pyalgs)
+[![Coverage Status](https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master)](https://coveralls.io/github/chen0040/pyalgs?branch=master) [![Build Status](https://travis-ci.org/chen0040/pyalgs.svg?branch=master)](https://travis-ci.org/chen0040/pyalgs) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chen0040/pyalgs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chen0040/pyalgs/?branch=master)
 
 ## Data Structure
 

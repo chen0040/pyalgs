@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
-class UnionFind(object):
 
+class UnionFind(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -14,11 +14,10 @@ class UnionFind(object):
 
     @staticmethod
     def create(size):
-        return QuickFind(size)
+        return QuickUnion(size)
 
 
 class QuickFind(UnionFind):
-
     id = None
 
     def __init__(self, capacity):
@@ -36,3 +35,31 @@ class QuickFind(UnionFind):
                 if self.id[i] == p:
                     self.id[i] = q
 
+
+class QuickUnion(UnionFind):
+    id = None
+    sizes = None
+
+    def __init__(self, capacity):
+        self.id = [i for i in range(capacity)]
+        self.sizes = [1] * capacity
+
+    def root(self, v):
+        while v != self.id[v]:
+            self.id[v] = self.id[self.id[v]]  # path compression
+            v = self.id[v]
+        return v
+
+    def connected(self, v, w):
+        return self.root(v) == self.root(w)
+
+    def union(self, v, w):
+        vroot = self.root(v)
+        wroot = self.root(w)
+
+        if self.sizes[vroot] > self.sizes[wroot]:
+            self.id[wroot] = vroot
+            self.sizes[vroot] += self.sizes[wroot]
+        else:
+            self.id[vroot] = wroot
+            self.sizes[wroot] += self.sizes[vroot]
