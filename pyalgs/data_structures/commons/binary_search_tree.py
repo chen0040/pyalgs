@@ -1,4 +1,5 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta
+from pyalgs.algorithms.commons.util import cmp
 
 
 class Node(object):
