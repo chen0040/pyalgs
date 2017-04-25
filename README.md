@@ -2,6 +2,8 @@
 
 Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.princeton.edu/home/) and Robert Sedgwick's Algorithms course using Python (Part I and Part II)
 
+[![Coverage Status](https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master)](https://coveralls.io/github/chen0040/pyalgs?branch=master)
+
 ## Data Structure
 
 ### Stack
