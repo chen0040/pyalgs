@@ -42,6 +42,8 @@ print deleted_item
 
 ### Sorting
 
+The sorting algorithms sort an array in ascending order
+
 #### Selection Sort
 
 <pre>
@@ -49,5 +51,15 @@ from pyalgs.algorithms.commons.sorting import SelectionSort
 
 a = [4, 2, 1]
 SelectionSort.sort(a)
+print a
+</pre>
+
+#### Selection Sort
+
+<pre>
+from pyalgs.algorithms.commons.sorting import InsertionSort
+
+a = [4, 2, 1]
+InsertionSort.sort(a)
 print a
 </pre>
