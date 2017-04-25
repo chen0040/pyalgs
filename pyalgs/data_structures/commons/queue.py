@@ -68,3 +68,42 @@ class LinkedListQueue(Queue):
             self.last = None
         self.N -= 1
         return old_first.value
+
+
+class ArrayQueue(Queue):
+    head = 0
+    tail = 0
+    s = []
+
+    def __init__(self, capacity=10):
+        self.s = [0] * capacity
+
+    def enqueue(self, item):
+        self.s[self.tail] = item
+        self.tail += 1
+        if self.tail == len(self.s):
+            self.resize(len(self.s) * 2)
+
+    def resize(self, new_size):
+        tmp = [0] * new_size
+        for i in range(self.head, self.tail):
+            tmp[i-self.head] = self.s[i]
+        self.s = tmp
+        self.head = self.head - self.tail
+        self.tail = 0
+
+    def size(self):
+        return self.tail - self.head
+
+    def is_empty(self):
+        return self.size() == 0
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+
+        deleted = self.s[self.head]
+        self.head -= 1
+        if self.size() == len(self.s) / 4:
+            self.resize(len(self.s) / 2)
+        return deleted
