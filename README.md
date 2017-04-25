@@ -54,7 +54,7 @@ SelectionSort.sort(a)
 print a
 </pre>
 
-#### Selection Sort
+#### Insertion Sort
 
 <pre>
 from pyalgs.algorithms.commons.sorting import InsertionSort
@@ -71,5 +71,15 @@ from pyalgs.algorithms.commons.sorting import ShellSort
 
 a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 ShellSort.sort(a)
+print a
+</pre>
+
+#### Merge Sort
+
+<pre>
+from pyalgs.algorithms.commons.sorting import MergeSort
+
+a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
+MergeSort.sort(a)
 print a
 </pre>
