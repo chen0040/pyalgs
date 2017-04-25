@@ -104,3 +104,18 @@ a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
 MergeSort.sort(a)
 print a
 </pre>
+
+### Selection
+
+#### Binary Selection
+
+<pre>
+from pyalgs.algorithms.commons.selecting import BinarySelection
+from pyalgs.algorithms.commons.util import is_sorted
+
+
+a = [1, 2, 13, 22, 123]
+assert is_sorted(a)
+print BinarySelection.index_of(a, 13) 
+        
+</pre>
