@@ -105,6 +105,17 @@ MergeSort.sort(a)
 print a
 </pre>
 
+#### Quick Sort
+
+<pre>
+from pyalgs.algorithms.commons.sorting import QuickSort
+
+a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
+QuickSort.sort(a)
+print a
+</pre>
+
+
 ### Selection
 
 #### Binary Selection

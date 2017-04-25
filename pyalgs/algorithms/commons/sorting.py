@@ -17,13 +17,12 @@ class SelectionSort(object):
 
 
 class InsertionSort(object):
-
     @staticmethod
     def sort(a, lo=None, hi=None):
         if lo is None:
             lo = 0
         if hi is None:
-            hi = len(a)-1
+            hi = len(a) - 1
 
         for i in range(lo, hi + 1):
             for j in reversed(range(1, i + 1)):
@@ -54,9 +53,14 @@ class MergeSort(object):
     CUTOFF = 7
 
     @staticmethod
-    def sort(a):
+    def sort(a, lo=None, hi=None):
+        if lo is None:
+            lo = 0
+        if hi is None:
+            hi = len(a) - 1
+
         aux = [0] * len(a)
-        MergeSort._sort(a, aux, 0, len(a) - 1)
+        MergeSort._sort(a, aux, lo, hi)
 
     @staticmethod
     def _sort(a, aux, lo, hi):
@@ -93,3 +97,46 @@ class MergeSort(object):
             else:
                 a[k] = aux[j]
                 j += 1
+
+
+class QuickSort(object):
+    CUTOFF = 7
+
+    @staticmethod
+    def sort(a, lo=None, hi=None):
+        if lo is None:
+            lo = 0
+        if hi is None:
+            hi = len(a) - 1
+
+        if lo >= hi:
+            return
+
+        j = QuickSort.partition(a, lo, hi)
+
+        QuickSort.sort(a, lo, j - 1)
+        QuickSort.sort(a, j + 1, hi)
+
+    @staticmethod
+    def partition(a, lo, hi):
+        i = lo
+        j = hi
+
+        while True:
+            while not util.less(a[lo], a[i]):
+                i += 1
+                if i >= hi:
+                    break
+
+            while util.less(a[lo], a[j]):
+                j -= 1
+                if j <= lo:
+                    break
+
+            if i >= j:
+                break
+
+            util.exchange(a, i, j)
+
+        util.exchange(a, lo, j)
+        return j
