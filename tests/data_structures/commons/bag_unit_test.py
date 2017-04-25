@@ -12,7 +12,7 @@ class BagUnitTest(unittest.TestCase):
         bag.add(300)
         bag.add(400)
 
-        print [i for i in bag.iterate()]
+        print([i for i in bag.iterate()])
 
         self.assertEqual(4, bag.size())
         self.assertFalse(bag.is_empty())

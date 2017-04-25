@@ -11,7 +11,7 @@ class StackTest(unittest.TestCase):
         stack.push(10)
         stack.push(1)
 
-        print [i for i in stack.iterate()]
+        print([i for i in stack.iterate()])
 
         self.assertFalse(stack.is_empty())
         self.assertEqual(2, stack.size())
@@ -28,7 +28,7 @@ class LinkedListStackTest(unittest.TestCase):
         stack.push(10)
         stack.push(1)
 
-        print [i for i in stack.iterate()]
+        print([i for i in stack.iterate()])
 
         self.assertFalse(stack.is_empty())
         self.assertEqual(2, stack.size())
@@ -44,7 +44,7 @@ class ArrayStackTest(unittest.TestCase):
         stack = ArrayStack()
         stack.push(10)
 
-        print [i for i in stack.iterate()]
+        print([i for i in stack.iterate()])
 
         self.assertFalse(stack.is_empty())
         self.assertEqual(1, stack.size())

@@ -8,7 +8,7 @@ class BinarySelectionUnitTest(unittest.TestCase):
     def test_select(self):
         a = [1, 2, 13, 22, 123]
         assert is_sorted(a)
-        print BinarySelection.index_of(a, 13)
+        print(BinarySelection.index_of(a, 13))
 
 if __name__ == '__main__':
     unittest.main()
