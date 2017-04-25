@@ -18,7 +18,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
-  "coverage run -m unittest discover -s ."
+  "coverage run -m unittest discover -s . -p '*_unit_test.py'"
 
 after_success:
   coveralls
