@@ -87,7 +87,9 @@ class ArrayQueue(Queue):
     tail = 0
     s = []
 
-    def __init__(self, capacity=10):
+    def __init__(self, capacity=None):
+        if capacity is None:
+            capacity = 10
         self.s = [0] * capacity
 
     def iterate(self):
