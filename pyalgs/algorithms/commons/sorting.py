@@ -1,5 +1,4 @@
-import util
-
+import pyalgs.algorithms.commons.util as util
 
 class SelectionSort(object):
     """ Order of Growth: N^2

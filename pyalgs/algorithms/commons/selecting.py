@@ -1,5 +1,5 @@
-from util import is_sorted, less
-from sorting import MergeSort
+from pyalgs.algorithms.commons.util import is_sorted, less
+
 
 class BinarySelection(object):
     @staticmethod
@@ -10,14 +10,14 @@ class BinarySelection(object):
         if lo is None:
             lo = 0
         if hi is None:
-            hi = len(a)-1
+            hi = len(a) - 1
 
         while lo <= hi:
             mid = lo + (hi - lo) / 2
             if less(x, a[mid]):
-                hi = mid-1
+                hi = mid - 1
             elif less(a[mid], x):
-                lo = mid+1
+                lo = mid + 1
             else:
                 return mid
 
