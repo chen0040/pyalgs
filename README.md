@@ -37,3 +37,17 @@ print queue.is_empty()
 deleted_item = queue.dequeue())
 print deleted_item
 </pre>
+
+## Algorithms
+
+### Sorting
+
+#### Selection Sort
+
+<pre>
+from pyalgs.algorithms.commons.sorting import SelectionSort
+
+a = [4, 2, 1]
+SelectionSort.sort(a)
+print a
+</pre>
