@@ -124,6 +124,27 @@ print bst.is_empty()
 bst.delete("one")
 </pre>
 
+### Symbol Table using Left Leaning Red Black Tree
+
+<pre>
+from pyalgs.data_structures.commons.binary_search_tree import BinarySearchTree
+bst = BinarySearchTree.create_red_black_tree()
+
+bst.put("one", 1)
+bst.put("two", 2)
+bst.put("three", 3)
+bst.put("six", 6)
+bst.put("ten", 10)
+
+print bst.get("one"))
+print bst.contains_key("two")
+
+print bst.size()
+print bst.is_empty()
+
+bst.delete("one")
+</pre>
+
 ## Algorithms
 
 ### Union Find

@@ -10,11 +10,17 @@ class Node(object):
     right = None
 
     count = 0
+    red = 1
 
-    def __init__(self, key, value):
+    def __init__(self, key, value, red=None):
         self.key = key
         self.value = value
         self.count = 1
+
+        if red is not None:
+            self.red = red
+        else:
+            self.red = 0
 
 
 def _count(x):
@@ -115,3 +121,68 @@ class BinarySearchTree(object):
     @staticmethod
     def create():
         return BinarySearchTree()
+
+    @staticmethod
+    def create_red_black_tree():
+        return RedBlackTree()
+
+
+class RedBlackTree(BinarySearchTree):
+    def put(self, key, value):
+        self.root = self._put2(self.root, key, value)
+
+    def _put2(self, x, key, value):
+        if x is None:
+            return Node(key, value, 1)
+        compared = cmp(key, x.key)
+        if compared < 0:
+            x.left = self._put2(x.left, key, value)
+        elif compared > 0:
+            x.right = self._put2(x.right, key, value)
+        else:
+            x.value = value
+
+        if self.is_red(x.right) and not self.is_red(x.left):
+            x = self.rotate_left(x)
+        if self.is_red(x.left) and self.is_red(x.left.left):
+            x = self.rotate_right(x)
+        if self.is_red(x.left) and self.is_red(x.right):
+            x = self.flip_colors(x)
+
+        x.count = 1 + _count(x.left) + _count(x.right)
+        return x
+
+    def is_red(self, x):
+        if x is None:
+            return False
+        return x.red == 1
+
+    def rotate_left(self, x):
+        m = x.right
+        x.right = m.left
+        m.left = x
+
+        m.red = x.red
+        x.red = 1
+
+        x.count = 1 + _count(x.left) + _count(x.right)
+        return m
+
+    def rotate_right(self, x):
+        m = x.left
+        x.left = m.right
+        m.right = x
+
+        m.red = x.red
+        x.red = 1
+
+        x.count = 1 + _count(x.left) + _count(x.right)
+        return m
+
+    def flip_colors(self, x):
+        if x.left is not None:
+            x.left.red = 0
+        if x.right is not None:
+            x.right.red = 0
+        x.red = 1
+        return x
