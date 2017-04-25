@@ -21,6 +21,9 @@ class StackTest(unittest.TestCase):
         self.assertEqual(10, stack.pop())
         self.assertTrue(stack.is_empty())
 
+        for i in range(100):
+            stack.push(i)
+
 
 class LinkedListStackTest(unittest.TestCase):
     def test_push(self):
@@ -38,6 +41,9 @@ class LinkedListStackTest(unittest.TestCase):
         self.assertEqual(10, stack.pop())
         self.assertTrue(stack.is_empty())
 
+        for i in range(100):
+            stack.push(i)
+
 
 class ArrayStackTest(unittest.TestCase):
     def test_push(self):
@@ -50,6 +56,9 @@ class ArrayStackTest(unittest.TestCase):
         self.assertEqual(1, stack.size())
         self.assertEqual(10, stack.pop())
         self.assertTrue(stack.is_empty())
+
+        for i in range(100):
+            stack.push(i)
 
 
 if __name__ == '__main__':

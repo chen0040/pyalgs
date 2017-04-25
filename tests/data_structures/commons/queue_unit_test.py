@@ -62,5 +62,8 @@ class QueueUnitTest(unittest.TestCase):
         self.assertEqual(30, queue.dequeue())
         self.assertTrue(queue.is_empty())
 
+        for i in range(100):
+            queue.enqueue(i)
+
 if __name__ == '__main__':
     unittest.main()
