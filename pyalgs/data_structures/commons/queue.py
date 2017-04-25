@@ -24,6 +24,10 @@ class Queue(object):
     def size(self):
         pass
 
+    @staticmethod
+    def create():
+        return LinkedListQueue()
+
 
 class Node(object):
 
