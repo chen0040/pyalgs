@@ -1,5 +1,5 @@
 def less(a, b):
-    return a < b
+    return cmp(a, b) < 0
 
 def exchange(a, i, j):
     tmp = a[j]

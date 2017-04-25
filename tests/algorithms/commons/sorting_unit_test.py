@@ -1,10 +1,9 @@
 import unittest
 
-from pyalgs.algorithms.commons.sorting import SelectionSort, InsertionSort
+from pyalgs.algorithms.commons.sorting import SelectionSort, InsertionSort, ShellSort
 
 
 class SelectionSortTest(unittest.TestCase):
-
     def test_sort(self):
         a = [4, 2, 1]
         SelectionSort.sort(a)
@@ -12,14 +11,24 @@ class SelectionSortTest(unittest.TestCase):
         self.assertEqual(2, a[1])
         self.assertEqual(4, a[2])
 
-class InsertionSortTest(unittest.TestCase):
 
+class InsertionSortTest(unittest.TestCase):
     def test_sort(self):
         a = [4, 2, 1]
         InsertionSort.sort(a)
         self.assertEqual(1, a[0])
         self.assertEqual(2, a[1])
         self.assertEqual(4, a[2])
+
+class ShellSortTest(unittest.TestCase):
+    def test_sort(self):
+        a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
+        ShellSort.sort(a)
+        print a
+        self.assertEqual(1, a[0])
+        self.assertEqual(2, a[1])
+        self.assertEqual(4, a[2])
+
 
 if __name__ == '__main__':
     unittest.main()
