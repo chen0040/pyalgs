@@ -112,6 +112,10 @@ class QuickSort(object):
         if lo >= hi:
             return
 
+        if hi - lo + 1 < QuickSort.CUTOFF:
+            InsertionSort.sort(a, lo, hi)
+            return
+
         j = QuickSort.partition(a, lo, hi)
 
         QuickSort.sort(a, lo, j - 1)
@@ -143,6 +147,8 @@ class QuickSort(object):
 
 
 class ThreeWayQuickSort(object):
+    CUTOFF = 7
+
     @staticmethod
     def sort(a, lo=None, hi=None):
         if lo is None:
@@ -151,6 +157,10 @@ class ThreeWayQuickSort(object):
             hi = len(a) - 1
 
         if lo >= hi:
+            return
+
+        if hi - lo + 1 < ThreeWayQuickSort.CUTOFF:
+            InsertionSort.sort(a, lo, hi)
             return
 
         i = lo
