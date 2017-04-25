@@ -30,7 +30,7 @@ class Node(object):
     value = None
     nextNode = None
 
-    def Node(self, value):
+    def __init__(self, value):
         self.value = value
 
 
