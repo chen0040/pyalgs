@@ -434,6 +434,19 @@ Depth First Search
             print(str(s) + ' is connected to ' + str(v))
             print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
 
-        
+Breadth First Search
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.search import BreadthFirstSearch
+    g = create_graph()
+    s = 0
+    dfs = BreadthFirstSearch(g, s)
+
+    for v in range(1, g.vertex_count()):
+        if dfs.hasPathTo(v):
+            print(str(s) + ' is connected to ' + str(v))
+            print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
+
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/

@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
+from pyalgs.data_structures.commons.queue import Queue
 from pyalgs.data_structures.commons.stack import Stack
 
 
@@ -43,5 +44,41 @@ class DepthFirstSearch(Paths):
         while x != self.s:
             path.push(x)
             x = self.edgesTo[x]
+        path.push(self.s)
+        return path.iterate()
+
+
+class BreadthFirstSearch(Paths):
+
+    marked = None
+    s = None
+    edgeTo = None
+
+    def __init__(self, G, s):
+        self.s = s
+        vertex_count = G.vertex_count()
+        self.marked = [False] * vertex_count
+        self.edgeTo = [-1] * vertex_count
+
+        queue = Queue.create()
+
+        queue.enqueue(s)
+        while not queue.is_empty():
+            v = queue.dequeue()
+            self.marked[v] = True
+            for w in G.adj(v):
+                if not self.marked[w]:
+                    self.edgeTo[w] = v
+                    queue.enqueue(w)
+
+    def hasPathTo(self, v):
+        return self.marked[v]
+
+    def pathTo(self, v):
+        x = v
+        path = Stack.create()
+        while x != self.s:
+            path.push(x)
+            x = self.edgeTo[x]
         path.push(self.s)
         return path.iterate()
