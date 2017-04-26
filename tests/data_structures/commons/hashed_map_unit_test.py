@@ -3,7 +3,7 @@ import unittest
 from pyalgs.data_structures.commons.hashed_map import HashedMapWithSeparateChaining, HashedMap
 
 
-class BinarySearchTreeUnitTest(unittest.TestCase):
+class HashedMapUnitTest(unittest.TestCase):
     def test_binarySearchTree(self):
         map = HashedMap.create()
 
@@ -48,9 +48,7 @@ class BinarySearchTreeUnitTest(unittest.TestCase):
             self.assertFalse(map.contains_key(str(i)))
 
 
-
-
-class RedBlackTreeUnitTest(unittest.TestCase):
+class HashedMapWithSeparateChainingUnitTest(unittest.TestCase):
     def test_binarySearchTree(self):
         map = HashedMapWithSeparateChaining()
 

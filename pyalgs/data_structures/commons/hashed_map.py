@@ -56,7 +56,7 @@ class HashedMapWithSeparateChaining(HashedMap):
     N = 0
 
     def __init__(self):
-        self.id = [Node()] * self.M
+        self.id = [None] * self.M
 
     def hash(self, key):
         return (hash(key) & 0x7fffffff) % self.M
@@ -110,6 +110,9 @@ class HashedMapWithSeparateChaining(HashedMap):
         return None
 
     def put(self, key, value):
+        if key is None:
+            raise ValueError('key cannot be None')
+
         i = self.hash(key)
         x = self.id[i]
         while x is not None:

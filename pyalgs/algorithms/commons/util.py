@@ -7,6 +7,10 @@ def greater(a, b):
 
 
 def cmp(a, b):
+    if a is None:
+        return -1
+    if b is None:
+        return -1
     return (a > b) - (a < b)
 
 
