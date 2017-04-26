@@ -290,6 +290,17 @@ ThreeWayQuickSort.sort(a)
 print(a)
 </pre>
 
+#### Heap Sort
+
+<pre>
+from pyalgs.algorithms.commons.sorting import HeapSort
+
+a = [4, 2, 1, 23, 4, 5, 6, 7, 8, 9, 20, 11, 13, 34, 66]
+HeapSort.sort(a)
+print(a)
+</pre>
+
+
 ### Selection
 
 #### Binary Selection

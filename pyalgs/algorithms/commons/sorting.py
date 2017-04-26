@@ -179,3 +179,34 @@ class ThreeWayQuickSort(object):
 
         ThreeWayQuickSort.sort(a, lo, lt - 1)
         ThreeWayQuickSort.sort(a, gt + 1, hi)
+
+
+class HeapSort(object):
+    @staticmethod
+    def sort(a):
+        n = len(a)
+
+        print(a)
+        for k in range(n // 2, 0, -1):
+            HeapSort.sink(a, k, n)
+
+        while n > 1:
+            util.exchange(a, HeapSort.index(1), HeapSort.index(n))
+            n -= 1
+            HeapSort.sink(a, 1, n)
+
+    @staticmethod
+    def sink(a, k, n):
+        while k * 2 <= n:
+            child = 2 * k
+            if child < n and util.greater(a[HeapSort.index(child+1)], a[HeapSort.index(child)]):
+                child = child + 1
+            if util.greater(a[HeapSort.index(child)], a[HeapSort.index(k)]):
+                util.exchange(a, HeapSort.index(child), HeapSort.index(k))
+                k = child
+            else:
+                break
+
+    @staticmethod
+    def index(k):
+        return k-1

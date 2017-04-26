@@ -93,6 +93,7 @@ class HashedMapWithSeparateChainingUnitTest(unittest.TestCase):
             map.delete(str(i))
             self.assertFalse(map.contains_key(str(i)))
 
+
 class HashedMapWithLinearProbingUnitTest(unittest.TestCase):
     def test_binarySearchTree(self):
         map = HashedMapWithLinearProbing()
@@ -136,6 +137,7 @@ class HashedMapWithLinearProbingUnitTest(unittest.TestCase):
         for i in range(100):
             map.delete(str(i))
             self.assertFalse(map.contains_key(str(i)))
+
 
 if __name__ == '__main__':
     unittest.main()
