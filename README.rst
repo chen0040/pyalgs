@@ -20,7 +20,7 @@ Install pyalgs
 
 Run the following command to install pyalgs using pip
 
-.. code-block:: python
+.. code-block:: bash
 
     $ pip install pyalgs
 

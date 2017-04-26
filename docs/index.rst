@@ -5,12 +5,23 @@ pyalgs is a library of python implementation for algorithms in the "Algorithms" 
 
 The main purpose of this library is to provide a companion library for python developers who are learning the algorithms in the "Algorithms" book
 
+Installation:
+-------------
+
+To install the package using pip:
+
+::
+
+    $ pip install pyalgs
+
+
+
 Usage
 -----
 
 To use the algorithms or data structures in your python code:
 
-::
+.. code-block:: python
 
       from pyalgs.data_structures.commons.stack import Stack
 
@@ -32,22 +43,13 @@ Features
 - Algorithms and data structures introduced in the "Algorithms" book.
 - Test coverage for each algorithm and data structure.
 
-Installation:
--------------
-
-To install the package using pip:
-
-::
-
-    $ pip install pyalgs
-
 
 Tests:
 ------
 
 the unit tests of all algorithms and data structures can be run with the following command from the root folder:
 
-::
+.. code-block:: bash
 
     $ python -m unittest discover -s . -p "*_unit_test.py"
 
