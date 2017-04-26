@@ -31,30 +31,43 @@ Features:
 =========
 
 * Data Structure
+
   - Stack
+
     + Linked List
     + Array
+
   - Queue
+
     + Linked List
     + Array
+
   - Bag
   - HashSet
   - HashMap
+
     + Separate Chaining
     + Linear Probing
+
   - Binary Search Tree
   - Red Black Tree
   - Priority Queue
+
     + MinPQ
     + MaxPQ
     + IndexMinPQ
+
   - Graph
+
     + Simple graph
     + Edge weighted graph
     + Directed graph (digraph)
     + Directed edge weight graph
+
 * Algorithms
+
   - Sorting
+
     + Selection Sort
     + Insertion Sort
     + Shell Sort
@@ -62,23 +75,38 @@ Features:
     + Quick Sort
     + 3-Ways Quick Sort
     + Heap Sort
+
   - Selection
+
     + Binary Search
+
   - Shuffling
+
     + Knuth
+
   - Union Find
+
     + Quick Find
     + Weighted Quick Union with path compression
+
 * Graph Algorithms
+
   - Search
+
     + Depth First Search
     + Breadth First Search
+
   - Connectivity
+
     + Connected Components
     + Strongly Connected Components
+
   - Topological Sorting
+
     + Depth First Reverse Post Order
+
   - Minimum Spanning Tree
+
     + Kruskal
     + Prim (Lazy)
     + Prim (Eager)
