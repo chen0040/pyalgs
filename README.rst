@@ -27,6 +27,61 @@ Run the following command to install pyalgs using pip
 
     $ pip install pyalgs
 
+Features:
+=========
+
+* Data Structure
+  - Stack
+    + Linked List
+    + Array
+  - Queue
+    + Linked List
+    + Array
+  - Bag
+  - HashSet
+  - HashMap
+    + Separate Chaining
+    + Linear Probing
+  - Binary Search Tree
+  - Red Black Tree
+  - Priority Queue
+    + MinPQ
+    + MaxPQ
+    + IndexMinPQ
+  - Graph
+    + Simple graph
+    + Edge weighted graph
+    + Directed graph (digraph)
+    + Directed edge weight graph
+* Algorithms
+  - Sorting
+    + Selection Sort
+    + Insertion Sort
+    + Shell Sort
+    + Merge Sort
+    + Quick Sort
+    + 3-Ways Quick Sort
+    + Heap Sort
+  - Selection
+    + Binary Search
+  - Shuffling
+    + Knuth
+  - Union Find
+    + Quick Find
+    + Weighted Quick Union with path compression
+* Graph Algorithms
+  - Search
+    + Depth First Search
+    + Breadth First Search
+  - Connectivity
+    + Connected Components
+    + Strongly Connected Components
+  - Topological Sorting
+    + Depth First Reverse Post Order
+  - Minimum Spanning Tree
+    + Kruskal
+    + Prim (Lazy)
+    + Prim (Eager)
 
 Usage:
 ======
@@ -281,7 +336,26 @@ Directed Graph
         print([i for i in G.adj(3)])
 
         print(G.vertex_count())
+        return G
 
+Edge Weighted Graph
+
+.. code-block:: python
+
+    from pyalgs.data_structures.graphs.graph import EdgeWeightGraph
+    def create_edge_weighted_graph():
+        g = EdgeWeightedGraph(8)
+        g.add_edge(Edge(0, 7, 0.16))
+        g.add_edge(Edge(2, 3, 0.17))
+        g.add_edge(Edge(1, 7, 0.19))
+        g.add_edge(Edge(0, 2, 0.26))
+        g.add_edge(Edge(5, 7, 0.28))
+
+        print([edge for edge in G.adj(3)])
+
+        print(G.vertex_count())
+        print(', '.join([edge for edge in G.edges()]))
+        return g
 
 Algorithms
 ----------
@@ -474,6 +548,18 @@ Topological Sort
     G = create_graph()
     topological_sort = DepthFirstOrder(G)
     print(' => '.join([str(i) for i in topological_sort.postOrder()]))
+
+Minimum Spanning Tree (Kruskal)
+
+.. code-block:: python
+
+    g = create_edge_weighted_graph()
+    mst = KruskalMST(g)
+
+    tree = mst.spanning_tree()
+
+    for e in tree:
+        print(e)
 
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/
