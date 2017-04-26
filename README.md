@@ -115,6 +115,9 @@ bst.put("three", 3)
 bst.put("six", 6)
 bst.put("ten", 10)
 
+for key in bst.keys():
+    print(key)
+
 print bst.get("one"))
 print bst.contains_key("two")
 
@@ -139,10 +142,37 @@ bst.put("ten", 10)
 print bst.get("one"))
 print bst.contains_key("two")
 
+for key in bst.keys():
+    print(key)
+
 print bst.size()
 print bst.is_empty()
 
 bst.delete("one")
+</pre>
+
+### Symbol Table using Hashed Map
+
+<pre>
+from pyalgs.data_structures.commons.hashed_map import HashedMap
+map = HashedMap.create()
+
+map.put("one", 1)
+map.put("two", 2)
+map.put("three", 3)
+map.put("six", 6)
+map.put("ten", 10)
+
+print map.get("one"))
+print map.contains_key("two")
+
+for key in map.keys():
+    print(key)
+
+print map.size()
+print map.is_empty()
+
+map.delete("one")
 </pre>
 
 ### Undirected Graph

@@ -1,5 +1,6 @@
 from abc import ABCMeta
 from pyalgs.algorithms.commons.util import cmp
+from pyalgs.data_structures.commons.queue import Queue
 
 
 class Node(object):
@@ -118,6 +119,19 @@ class BinarySearchTree(object):
     def contains_key(self, x):
         return self.get(x) is not None
 
+    def keys(self):
+        queue = Queue.create()
+        self.collect_keys(self.root, queue)
+        return queue.iterate()
+
+    def collect_keys(self, x, queue):
+        if x is None:
+            return
+
+        self.collect_keys(x.left, queue)
+        queue.enqueue(x.key)
+        self.collect_keys(x.right, queue)
+
     @staticmethod
     def create():
         return BinarySearchTree()
@@ -186,3 +200,4 @@ class RedBlackTree(BinarySearchTree):
             x.right.red = 0
         x.red = 1
         return x
+

@@ -40,9 +40,14 @@ class BinarySearchTreeUnitTest(unittest.TestCase):
             bst.put(str(i), i)
             self.assertEqual(i, bst.get(str(i)))
 
+        for key in bst.keys():
+            print(key)
+
         for i in range(100):
             bst.delete(str(i))
             self.assertFalse(bst.contains_key(str(i)))
+
+
 
 
 class RedBlackTreeUnitTest(unittest.TestCase):
@@ -81,6 +86,9 @@ class RedBlackTreeUnitTest(unittest.TestCase):
         for i in range(100):
             bst.put(str(i), i)
             self.assertEqual(i, bst.get(str(i)))
+
+        for key in bst.keys():
+            print(key)
 
         for i in range(100):
             bst.delete(str(i))
