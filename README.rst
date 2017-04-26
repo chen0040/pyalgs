@@ -3,16 +3,16 @@ pyalgs
 
 Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.princeton.edu/home/) and Robert Sedgwick's Algorithms course using Python (Part I and Part II)
 
-.. image:: https://travis-ci.org/chen0040/pyalgs.svg?branch=master
+.. image.. code-block:: python https://travis-ci.org/chen0040/pyalgs.svg?branch=master
     :target: https://travis-ci.org/chen0040/pyalgs
 
-.. image:: https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master
+.. image.. code-block:: python https://coveralls.io/repos/github/chen0040/pyalgs/badge.svg?branch=master
     :target: https://coveralls.io/github/chen0040/pyalgs?branch=master
 
-.. image:: https://readthedocs.org/projects/pyalgs/badge/?version=latest
+.. image.. code-block:: python https://readthedocs.org/projects/pyalgs/badge/?version=latest
     :target: http://pyalgs.readthedocs.org/en/latest/?badge=latest
 
-.. image:: https://scrutinizer-ci.com/g/chen0040/pyalgs/badges/quality-score.png?b=master
+.. image.. code-block:: python https://scrutinizer-ci.com/g/chen0040/pyalgs/badges/quality-score.png?b=master
     :target: https://scrutinizer-ci.com/g/chen0040/pyalgs/?branch=master
 
 Install pyalgs
@@ -20,7 +20,7 @@ Install pyalgs
 
 Run the following command to install pyalgs using pip
 
-::
+.. code-block:: python
 
     $ pip install pyalgs
 
@@ -31,7 +31,7 @@ Data Structure
 Stack
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.stack import Stack
 
@@ -52,7 +52,7 @@ Stack
 Queue
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.queue import Queue
 
@@ -74,7 +74,7 @@ Queue
 Bag
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.bag import Bag
 
@@ -92,7 +92,7 @@ Bag
 
 Minimum Priority Queue
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.priority_queue import MinPQ
 
@@ -115,7 +115,7 @@ Minimum Priority Queue
 Maximum Priority Queue
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.priority_queue import MaxPQ
 
@@ -138,7 +138,7 @@ Maximum Priority Queue
 Symbol Table using Binary Search Tree
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.binary_search_tree import BinarySearchTree
     bst = BinarySearchTree.create()
@@ -164,7 +164,7 @@ Symbol Table using Binary Search Tree
 Symbol Table using Left Leaning Red Black Tree
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.binary_search_tree import BinarySearchTree
     bst = BinarySearchTree.create_red_black_tree()
@@ -190,7 +190,7 @@ Symbol Table using Left Leaning Red Black Tree
 Symbol Table using Hashed Map
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.hashed_map import HashedMap
     map = HashedMap.create()
@@ -216,7 +216,7 @@ Symbol Table using Hashed Map
 Symbol Table using Hashed Set
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.commons.hashed_set import HashedSet
     set = HashedSet.create()
@@ -241,7 +241,7 @@ Symbol Table using Hashed Set
 Undirected Graph
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.graphs.graph import Graph
     G = Graph(100)
@@ -259,7 +259,7 @@ Undirected Graph
 Directed Graph
 
 
-::
+.. code-block:: python
 
     from pyalgs.data_structures.graphs.graph import Digraph
     G = Digraph(100)
@@ -280,7 +280,7 @@ Algorithms
 Union Find
 
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.union_find import UnionFind
 
@@ -303,7 +303,7 @@ The sorting algorithms sort an array in ascending order
 
 Selection Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import SelectionSort
 
@@ -314,7 +314,7 @@ Selection Sort
 
 Insertion Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import InsertionSort
 
@@ -325,7 +325,7 @@ Insertion Sort
 
 Shell Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import ShellSort
 
@@ -336,7 +336,7 @@ Shell Sort
 
 Merge Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import MergeSort
 
@@ -347,7 +347,7 @@ Merge Sort
 
 Quick Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import QuickSort
 
@@ -358,7 +358,7 @@ Quick Sort
 
 3-Ways Quick Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import ThreeWayQuickSort
 
@@ -369,7 +369,7 @@ Quick Sort
 
 Heap Sort
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.sorting import HeapSort
 
@@ -384,7 +384,7 @@ Selection
 
 Binary Selection
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.selecting import BinarySelection
     from pyalgs.algorithms.commons.util import is_sorted
@@ -400,7 +400,7 @@ Shuffle
 
 Knuth Shuffle
 
-::
+.. code-block:: python
 
     from pyalgs.algorithms.commons.shuffling import KnuthShuffle
 
