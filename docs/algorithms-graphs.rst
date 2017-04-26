@@ -7,3 +7,4 @@ Graphs
 
    graphs-create
    graphs-search
+   graphs-connectivity

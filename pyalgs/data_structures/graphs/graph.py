@@ -7,7 +7,9 @@ class Graph(object):
 
     def __init__(self, V):
         self.V = V
-        self.adjList = [Bag()] * V
+        self.adjList = [None] * V
+        for v in range(V):
+            self.adjList[v] = Bag()
 
     def vertex_count(self):
         return self.V
@@ -26,7 +28,9 @@ class Digraph(object):
 
     def __init__(self, V):
         self.V = V
-        self.adjList = [Bag()] * V
+        self.adjList = [None] * V
+        for v in range(V):
+            self.adjList[v] = Bag()
 
     def vertex_count(self):
         return self.V

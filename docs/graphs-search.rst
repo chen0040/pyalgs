@@ -17,7 +17,7 @@ Depth First Search
             print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
             
 Breadth First Search
-------------------
+--------------------
 
 .. code-block:: python
 
