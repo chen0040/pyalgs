@@ -418,7 +418,7 @@ Knuth Shuffle
     print(a)
 
 Graph
-=====
+-----
 
 Depth First Search
 

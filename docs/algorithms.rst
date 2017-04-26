@@ -4,4 +4,5 @@ Algorithms
 .. toctree::
    :maxdepth: 4
 
-   commons
+   algorithms-commons
+   algorithms-graphs
