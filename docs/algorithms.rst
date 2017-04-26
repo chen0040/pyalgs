@@ -2,8 +2,6 @@ Algorithms
 ==========
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
-   commons-sort
-   commons-shuffle
-   commons-search
+   commons

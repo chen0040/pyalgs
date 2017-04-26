@@ -15,6 +15,9 @@ Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.p
 .. image:: https://scrutinizer-ci.com/g/chen0040/pyalgs/badges/quality-score.png?b=master
     :target: https://scrutinizer-ci.com/g/chen0040/pyalgs/?branch=master
 
+
+More details are provided in the `docs`_ for implementation, complexities and further info.
+
 Install pyalgs
 ==============
 
