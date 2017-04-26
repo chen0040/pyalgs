@@ -175,6 +175,29 @@ print map.is_empty()
 map.delete("one")
 </pre>
 
+### Symbol Table using Hashed Set
+
+<pre>
+from pyalgs.data_structures.commons.hashed_set import HashedSet
+set = HashedSet.create()
+
+set.add("one")
+set.add("two")
+set.add("three")
+set.add("six")
+set.add("ten")
+
+print set.contains("two")
+
+for key in set.iterate():
+    print(key)
+
+print set.size()
+print set.is_empty()
+
+set.delete("one")
+</pre>
+
 ### Undirected Graph
 
 <pre>
