@@ -11,9 +11,10 @@ class MinPQ(object):
         self.pq = [0] * capacity
 
     def enqueue(self, key):
+        self.N += 1
         if self.N == len(self.pq):
             self.resize(len(self.pq) * 2)
-        self.N += 1
+
         self.pq[self.N] = key
         self.swim(self.N)
 
