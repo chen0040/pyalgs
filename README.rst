@@ -415,3 +415,5 @@ Knuth Shuffle
     print(a)
 
         
+.. _`docs`: http://pyalgs.readthedocs.org/en/latest/
+.. _`documentation`: http://pyalgs.readthedocs.org/en/latest/
