@@ -448,7 +448,7 @@ Breadth First Search
             print(str(s) + ' is connected to ' + str(v))
             print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
 
-Connected Components for undirected graph
+Connected Components
 
 .. code-block:: python
 
@@ -465,6 +465,15 @@ Connected Components for undirected graph
         r = randint(0, G.vertex_count()-1)
         if cc.connected(v, r):
             print(str(v) + ' is connected to ' + str(r))
+
+Topological Sort
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.topological_sort import DepthFirstOrder
+    G = create_graph()
+    topological_sort = DepthFirstOrder(G)
+    print(' => '.join([str(i) for i in topological_sort.postOrder()]))
 
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/

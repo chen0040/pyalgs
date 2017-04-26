@@ -60,3 +60,20 @@ def create_digraph():
     
     return g
    
+   
+def create_dag():
+    dag = Digraph(7)
+
+    dag.add_edge(0, 5)
+    dag.add_edge(0, 2)
+    dag.add_edge(0, 1)
+    dag.add_edge(3, 6)
+    dag.add_edge(3, 5)
+    dag.add_edge(3, 4)
+    dag.add_edge(5, 4)
+    dag.add_edge(6, 4)
+    dag.add_edge(6, 0)
+    dag.add_edge(3, 2)
+    dag.add_edge(1, 4)
+
+    return dag
