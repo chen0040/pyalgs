@@ -3,12 +3,11 @@ pyalgs
 -----
 
 Package pyalgs implements algorithms in Robert Sedgwick's Coursera course in Python (Part I and Part II)
-
 """
+
 import re
 import ast
 from setuptools import setup
-
 
 _version_re = re.compile(r'__version__\s+=\s+(.*)')
 
@@ -16,6 +15,10 @@ with open('pyalgs/__init__.py', 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(
         f.read().decode('utf-8')).group(1)))
 
+def long_description():
+    with io.open('README.rst', 'r', encoding='utf-8') as f:
+        readme = f.read()
+    return readme
 
 setup(
     name='pyalgs',
@@ -25,7 +28,7 @@ setup(
     author='Xianshun Chen',
     author_email='xs0040@gmail.com',
     description='Python implementation of Robert Sedgwick\'s Algorithm (Part I and Part II) Coursera course',
-    long_description=__doc__,
+    long_description=long_description(),
     packages=['pyalgs'],
     include_package_data=True,
     zip_safe=False,
@@ -48,3 +51,5 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
+
+__author__ = 'Xianshun Chen'
