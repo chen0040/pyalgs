@@ -250,16 +250,18 @@ Undirected Graph
 .. code-block:: python
 
     from pyalgs.data_structures.graphs.graph import Graph
-    G = Graph(100)
+    def create_graph():
+        G = Graph(100)
 
-    G.add_edge(1, 2)
-    G.add_edge(1, 3)
+        G.add_edge(1, 2)
+        G.add_edge(1, 3)
 
-    print([i for i in G.adj(1)])
-    print([i for i in G.adj(2)])
-    print([i for i in G.adj(3)])
+        print([i for i in G.adj(1)])
+        print([i for i in G.adj(2)])
+        print([i for i in G.adj(3)])
 
-    print(G.vertex_count())
+        print(G.vertex_count())
+        return G
 
 
 Directed Graph
@@ -268,16 +270,17 @@ Directed Graph
 .. code-block:: python
 
     from pyalgs.data_structures.graphs.graph import Digraph
-    G = Digraph(100)
+    def create_digraph():
+        G = Digraph(100)
 
-    G.add_edge(1, 2)
-    G.add_edge(1, 3)
+        G.add_edge(1, 2)
+        G.add_edge(1, 3)
 
-    print([i for i in G.adj(1)])
-    print([i for i in G.adj(2)])
-    print([i for i in G.adj(3)])
+        print([i for i in G.adj(1)])
+        print([i for i in G.adj(2)])
+        print([i for i in G.adj(3)])
 
-    print(G.vertex_count())
+        print(G.vertex_count())
 
 
 Algorithms
@@ -413,6 +416,23 @@ Knuth Shuffle
     a = [1, 2, 13, 22, 123]
     KnuthShuffle.shuffle(a)
     print(a)
+
+Graph
+=====
+
+Depth First Search
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.search import DepthFirstSearch
+    g = create_graph()
+    s = 0
+    dfs = DepthFirstSearch(g, s)
+
+    for v in range(1, g.vertex_count()):
+        if dfs.hasPathTo(v):
+            print(str(s) + ' is connected to ' + str(v))
+            print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
 
         
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
