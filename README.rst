@@ -16,7 +16,7 @@ Package pyalgs implements algorithms in the "Algorithms" book (http://algs4.cs.p
     :target: https://scrutinizer-ci.com/g/chen0040/pyalgs/?branch=master
 
 Install pyalgs
---------------
+==============
 
 Run the following command to install pyalgs using pip
 
@@ -25,8 +25,11 @@ Run the following command to install pyalgs using pip
     $ pip install pyalgs
 
 
+Usage:
+======
+
 Data Structure
-==============
+--------------
 
 Stack
 

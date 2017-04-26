@@ -7,6 +7,7 @@ Package pyalgs implements algorithms in Robert Sedgwick's Coursera course in Pyt
 
 import re
 import ast
+import io
 from setuptools import setup
 
 _version_re = re.compile(r'__version__\s+=\s+(.*)')
@@ -35,9 +36,9 @@ setup(
     platforms='any',
     install_requires=[],
     classifiers=[
-        'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
@@ -45,9 +46,11 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
-        'Topic :: Algorithms :: Basic :: Data Structure',
-        'Topic :: Algorithms :: Basic :: Graph Processing',
-        'Topic :: Algorithms :: Basic :: String Processing',
+        'Topic :: Text Processing :: General',
+        'Topic :: Utilities',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Science/Research',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
