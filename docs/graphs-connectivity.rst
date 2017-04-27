@@ -22,7 +22,7 @@ Connected Components for undirected graph
 
 
 Strongly Connected Components for directed graph
------------------------------
+------------------------------------------------
 
 .. code-block:: python
 

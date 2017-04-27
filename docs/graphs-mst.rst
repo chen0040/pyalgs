@@ -16,7 +16,7 @@ Minimum Spanning Tree (Kruskal)
         print(e)
 
 Minimum Spanning Tree (Lazy Prim)
--------------------------------
+---------------------------------
 
 .. code-block:: python
 

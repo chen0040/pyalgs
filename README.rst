@@ -111,6 +111,10 @@ Features:
     + Prim (Lazy)
     + Prim (Eager)
 
+  - Shortest Path
+
+    + Dijkstra
+
 Usage:
 ======
 
@@ -385,6 +389,19 @@ Edge Weighted Graph
         print(', '.join([edge for edge in G.edges()]))
         return g
 
+Directed Edge Weighted Graph
+
+.. code-block:: python
+
+    from pyalgs.data_structures.graphs.graph import DirectedEdgeWeightedGraph
+    def create_edge_weighted_digraph():
+        g = DirectedEdgeWeightedGraph(8)
+
+        g.add_edge(Edge(0, 1, 5.0))
+        g.add_edge(Edge(0, 4, 9.0))
+        g.add_edge(Edge(0, 7, 8.0))
+        g.add_edge(Edge(1, 2, 12.0))
+        return g
 Algorithms
 ----------
 
@@ -625,6 +642,20 @@ Minimum Spanning Tree (Prim Lazy)
 
     for e in tree:
         print(e)
+
+Shortest Path (Dijkstra)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.shortest_path import DijkstraShortestPath
+    g = create_edge_weighted_digraph()
+    s = 0
+    dijkstra = DijkstraShortestPath(g, s)
+    for v in range(1, g.vertex_count()):
+        if dijkstra.hasPathTo(v):
+            print(str(s) + ' is connected to ' + str(v))
+            print('shortest path is ' + ' .. '.join([str(i) for i in dijkstra.shortestPathTo(v)]))
+            print('path length is ' + str(dijkstra.path_length_to(v)))
 
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/

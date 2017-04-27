@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 from pyalgs.algorithms.graphs.topological_sort import DepthFirstOrder
-from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph, Digraph
+from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph, Digraph, DirectedEdgeWeightedGraph
 
 
 class ConnectedComponents(object):
@@ -46,6 +46,8 @@ class StronglyConnectedComponents(object):
     def __init__(self, G):
         if isinstance(G, EdgeWeightedGraph):
             raise ValueError('Graph must be directed graph for strongly connected components')
+        if isinstance(G, DirectedEdgeWeightedGraph):
+            G = G.to_digrah()
         if not isinstance(G, Digraph):
             raise ValueError('Graph must be directed graph for strongly connected components')
 

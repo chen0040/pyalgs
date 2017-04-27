@@ -56,3 +56,22 @@ Edge Weighted Graph
         print(G.vertex_count())
         print(', '.join([edge for edge in G.edges()]))
         return g
+
+Directed Edge Weighted Graph
+----------------------------
+
+.. code-block:: python
+
+    from pyalgs.data_structures.graphs.graph import DirectedEdgeWeightedGraph
+    def create_edge_weighted_digraph():
+        g = DirectedEdgeWeightedGraph(8)
+
+        g.add_edge(
+            Edge(0, 1, 5.0))
+        g.add_edge(
+            Edge(0, 4, 9.0))
+        g.add_edge(
+            Edge(0, 7, 8.0))
+        g.add_edge(
+            Edge(1, 2, 12.0))
+        return g

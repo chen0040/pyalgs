@@ -20,7 +20,7 @@ class KruskalMST(MST):
 
     def __init__(self, G):
         if not isinstance(G, EdgeWeightedGraph):
-            raise ValueError('Graph must be edge weighted to run MST')
+            raise ValueError('Graph must be edge weighted and undirected to run MST')
         minpq = MinPQ.create()
         self.tree = Bag()
         for e in G.edges():
@@ -30,8 +30,8 @@ class KruskalMST(MST):
 
         while not minpq.is_empty() and self.tree.size() < G.vertex_count() - 1:
             e = minpq.del_min()
-            v = e.start()
-            w = e.end()
+            v = e.either()
+            w = e.other(v)
             if not uf.connected(v, w):
                 uf.union(v, w)
                 self.tree.add(e)
@@ -47,7 +47,7 @@ class LazyPrimMST(MST):
 
     def __init__(self, G):
         if not isinstance(G, EdgeWeightedGraph):
-            raise ValueError('Graph must be edge weighted to run MST')
+            raise ValueError('Graph must be edge weighted and undirected to run MST')
         self.minpq = MinPQ.create()
         self.tree = Bag()
         vertex_count = G.vertex_count()
@@ -56,8 +56,8 @@ class LazyPrimMST(MST):
 
         while not self.minpq.is_empty() and self.tree.size() < vertex_count - 1:
             edge = self.minpq.del_min()
-            v = edge.start()
-            w = edge.end()
+            v = edge.either()
+            w = edge.other(v)
             if self.marked[v] and self.marked[w]:
                 continue
             self.tree.add(edge)
@@ -84,7 +84,7 @@ class EagerPrimMST(MST):
 
     def __init__(self, G):
         if not isinstance(G, EdgeWeightedGraph):
-            raise ValueError('Graph must be edge weighted to run MST')
+            raise ValueError('Graph must be edge weighted and undirected to run MST')
         vertex_count = G.vertex_count()
         self.pq = IndexMinPQ(vertex_count)
         self.path = Bag()

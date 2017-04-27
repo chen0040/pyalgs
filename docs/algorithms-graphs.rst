@@ -10,3 +10,4 @@ Graphs
    graphs-connectivity
    graphs-topological-sort
    graphs-mst
+   graphs-shortest-path

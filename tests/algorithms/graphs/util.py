@@ -1,4 +1,5 @@
-from pyalgs.data_structures.graphs.graph import Graph, Digraph, EdgeWeightedGraph, Edge
+from pyalgs.data_structures.graphs.graph import Graph, Digraph, EdgeWeightedGraph, Edge, EdgeWeightedGraph, \
+    DirectedEdgeWeightedGraph
 
 
 def create_graph():
@@ -101,8 +102,46 @@ def create_edge_weighted_graph():
     return g
 
 
+def create_edge_weighted_digraph():
+    g = DirectedEdgeWeightedGraph(8)
+
+    g.add_edge(
+        Edge(0, 1, 5.0))
+    g.add_edge(
+        Edge(0, 4, 9.0))
+    g.add_edge(
+        Edge(0, 7, 8.0))
+    g.add_edge(
+        Edge(1, 2, 12.0))
+    g.add_edge(
+        Edge(1, 3, 15.0))
+    g.add_edge(
+        Edge(1, 7, 4.0))
+    g.add_edge(
+        Edge(2, 3, 3.0))
+    g.add_edge(
+        Edge(2, 6, 11.0))
+    g.add_edge(
+        Edge(3, 6, 9.0))
+    g.add_edge(
+        Edge(4, 5, 5.0))
+    g.add_edge(
+        Edge(4, 6, 20.0))
+    g.add_edge(
+        Edge(4, 7, 5.0))
+    g.add_edge(
+        Edge(5, 2, 1.0))
+    g.add_edge(
+        Edge(5, 6, 13.0))
+    g.add_edge(
+        Edge(7, 5, 6.0))
+    g.add_edge(
+        Edge(7, 2, 7.0))
+
+    return g
+
+
 def create_digraph_4_strongly_connected_components():
-    
     graph = Digraph(13)
     graph.add_edge(4, 2)
     graph.add_edge(2, 3)
@@ -126,5 +165,5 @@ def create_digraph_4_strongly_connected_components():
     graph.add_edge(6, 4)
     graph.add_edge(6, 9)
     graph.add_edge(7, 6)
-    
+
     return graph
