@@ -552,6 +552,8 @@ Breadth First Search
 
 Connected Components
 
+This is for undirected graph
+
 .. code-block:: python
 
     from pyalgs.algorithms.graphs.connectivity import ConnectedComponents
@@ -567,6 +569,27 @@ Connected Components
         r = randint(0, G.vertex_count()-1)
         if cc.connected(v, r):
             print(str(v) + ' is connected to ' + str(r))
+
+Strongly Connected Components
+
+This is for directed graph
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.connectivity import StronglyConnectedComponents
+    G = create_graph()
+
+    cc = StronglyConnectedComponents(G)
+    print('strongly connected component count: ' + str(cc.count()))
+
+
+    for v in range(G.vertex_count()):
+        print('id[' + str(v) + ']: ' + str(cc.id(v)))
+    for v in range(G.vertex_count()):
+        r = randint(0, G.vertex_count()-1)
+        if cc.connected(v, r):
+            print(str(v) + ' is connected to ' + str(r))
+
 
 Topological Sort
 

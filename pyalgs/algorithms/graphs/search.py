@@ -2,6 +2,7 @@ from abc import ABCMeta, abstractmethod
 
 from pyalgs.data_structures.commons.queue import Queue
 from pyalgs.data_structures.commons.stack import Stack
+from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph
 
 
 class Paths(object):
@@ -22,6 +23,8 @@ class DepthFirstSearch(Paths):
     s = None
 
     def __init__(self, G, s):
+        if isinstance(G, EdgeWeightedGraph):
+            G = G.to_graph()
         self.s = s
         vertex_count = G.vertex_count()
         self.marked = [False] * vertex_count
@@ -55,6 +58,8 @@ class BreadthFirstSearch(Paths):
     edgeTo = None
 
     def __init__(self, G, s):
+        if isinstance(G, EdgeWeightedGraph):
+            G = G.to_graph()
         self.s = s
         vertex_count = G.vertex_count()
         self.marked = [False] * vertex_count

@@ -4,6 +4,7 @@ from pyalgs.algorithms.commons.union_find import UnionFind
 from pyalgs.algorithms.commons.util import less
 from pyalgs.data_structures.commons.bag import Bag
 from pyalgs.data_structures.commons.priority_queue import MinPQ, IndexMinPQ
+from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph
 
 
 class MST(object):
@@ -18,6 +19,8 @@ class KruskalMST(MST):
     tree = None
 
     def __init__(self, G):
+        if not isinstance(G, EdgeWeightedGraph):
+            raise ValueError('Graph must be edge weighted to run MST')
         minpq = MinPQ.create()
         self.tree = Bag()
         for e in G.edges():
@@ -43,6 +46,8 @@ class LazyPrimMST(MST):
     minpq = None
 
     def __init__(self, G):
+        if not isinstance(G, EdgeWeightedGraph):
+            raise ValueError('Graph must be edge weighted to run MST')
         self.minpq = MinPQ.create()
         self.tree = Bag()
         vertex_count = G.vertex_count()
@@ -78,6 +83,8 @@ class EagerPrimMST(MST):
     marked = None
 
     def __init__(self, G):
+        if not isinstance(G, EdgeWeightedGraph):
+            raise ValueError('Graph must be edge weighted to run MST')
         vertex_count = G.vertex_count()
         self.pq = IndexMinPQ(vertex_count)
         self.path = Bag()

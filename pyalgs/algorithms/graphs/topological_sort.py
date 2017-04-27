@@ -1,4 +1,5 @@
 from pyalgs.data_structures.commons.stack import Stack
+from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph
 
 
 class DepthFirstOrder(object):

@@ -99,3 +99,32 @@ def create_edge_weighted_graph():
     g.add_edge(Edge(6, 4, 0.93))
 
     return g
+
+
+def create_digraph_4_strongly_connected_components():
+    
+    graph = Digraph(13)
+    graph.add_edge(4, 2)
+    graph.add_edge(2, 3)
+    graph.add_edge(3, 2)
+    graph.add_edge(6, 0)
+    graph.add_edge(0, 1)
+    graph.add_edge(2, 0)
+    graph.add_edge(11, 12)
+    graph.add_edge(12, 9)
+    graph.add_edge(9, 10)
+    graph.add_edge(9, 11)
+    graph.add_edge(8, 9)
+    graph.add_edge(10, 12)
+    graph.add_edge(11, 4)
+    graph.add_edge(4, 3)
+    graph.add_edge(3, 5)
+    graph.add_edge(7, 8)
+    graph.add_edge(8, 7)
+    graph.add_edge(5, 4)
+    graph.add_edge(0, 5)
+    graph.add_edge(6, 4)
+    graph.add_edge(6, 9)
+    graph.add_edge(7, 6)
+    
+    return graph

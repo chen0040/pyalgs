@@ -121,3 +121,10 @@ class EdgeWeightedGraph(object):
                 if e.start() == v:
                     yield e
 
+    def to_graph(self):
+        g = Graph()
+
+        for e in self.edges():
+            g.add_edge(e.start(), e.end())
+        return g
+
