@@ -370,6 +370,7 @@ Directed Graph
         print(G.vertex_count())
         return G
 
+
 Edge Weighted Graph
 
 .. code-block:: python
@@ -389,6 +390,7 @@ Edge Weighted Graph
         print(', '.join([edge for edge in G.edges()]))
         return g
 
+
 Directed Edge Weighted Graph
 
 .. code-block:: python
@@ -402,6 +404,8 @@ Directed Edge Weighted Graph
         g.add_edge(Edge(0, 7, 8.0))
         g.add_edge(Edge(1, 2, 12.0))
         return g
+
+
 Algorithms
 ----------
 
