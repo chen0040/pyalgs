@@ -194,7 +194,7 @@ class IndexMinPQ(object):
 
     def swim(self, k):
         while k > 1:
-            parent = k / 2
+            parent = k // 2
             if less(self.keys[self.pq[k]], self.keys[self.pq[parent]]):
                 exchange(self.pq, k, parent)
                 self.qp[self.pq[k]] = k

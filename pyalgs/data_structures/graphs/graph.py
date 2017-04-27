@@ -77,8 +77,17 @@ class Edge(object):
         else:
             raise ValueError('mismatched vertex detected')
 
+    # use for python 2 comparison
     def __cmp__(self, other):
         return util.cmp(self.weight, other.weight)
+
+    # user for python 3 comparison
+    def __lt__(self, other):
+        return util.less(self.weight, other.weight)
+
+    # user for python 3 comparison
+    def __gt__(self, other):
+        return util.greater(self.weight, other.weight)
 
     def __str__(self):
         return str(self.v) + ' => ' + str(self.w) + ' (' + str(self.weight) + ')'
