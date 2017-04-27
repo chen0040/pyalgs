@@ -34,3 +34,39 @@ class KruskalMST(MST):
 
     def spanning_tree(self):
         return self.tree.iterate()
+
+
+class LazyPrimMST(MST):
+    tree = None
+    marked = None
+    minpq = None
+
+    def __init__(self, G):
+        self.minpq = MinPQ.create()
+        self.tree = Bag()
+        vertex_count = G.vertex_count()
+        self.marked = [False] * vertex_count
+        self.visit(G, 0)
+
+        while not self.minpq.is_empty() and self.tree.size() < vertex_count-1:
+            edge = self.minpq.del_min()
+            v = edge.start()
+            w = edge.end()
+            if self.marked[v] and self.marked[w]:
+                continue
+            self.tree.add(edge)
+            if not self.marked[v]:
+                self.visit(G, v)
+            if not self.marked[w]:
+                self.visit(G, w)
+
+    def visit(self, G, v):
+        self.marked[v] = True
+        for e in G.adj(v):
+            w = e.other(v)
+            if not self.marked[w]:
+                self.minpq.enqueue(e)
+
+    def spanning_tree(self):
+        return self.tree.iterate()
+
