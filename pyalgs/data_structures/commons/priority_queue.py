@@ -162,3 +162,79 @@ class MaxPQ(object):
     @staticmethod
     def create():
         return MaxPQ()
+
+
+class IndexMinPQ(object):
+
+    keys = None
+    pq = None
+    qp = None
+    N = 0
+
+    def __init__(self, size):
+        self.keys = [None] * (size+1)
+        self.pq = [0] * (size+1)
+        self.qp = [0] * (size+1)
+
+    def insert(self, index, key):
+        self.keys[index] = key
+        self.N += 1
+        self.pq[self.N] = index
+        self.qp[index] = self.N
+
+        self.swim(self.N)
+
+    def decrease_key(self, index, key):
+        self.keys[index] = key
+        k = self.qp[index]
+        self.swim(k)
+
+    def contains_index(self, index):
+        return self.keys[index] is not None
+
+    def swim(self, k):
+        while k > 1:
+            parent = k / 2
+            if less(self.keys[self.pq[k]], self.keys[self.pq[parent]]):
+                exchange(self.pq, k, parent)
+                self.qp[self.pq[k]] = k
+                self.qp[self.pq[parent]] = parent
+                k = parent
+            else:
+                break
+
+    def get(self, index):
+        return self.keys[index]
+
+    def min_key(self):
+        return self.keys[self.pq[1]]
+
+    def del_min(self):
+        index = self.pq[1]
+        exchange(self.pq, 1, self.N)
+        self.qp[self.pq[1]] = 1
+        self.qp[self.pq[self.N]] = self.N
+
+        self.N -= 1
+        self.sink(1)
+
+        return index
+
+    def sink(self, k):
+        while 2 * k <= self.N:
+            child = 2 * k
+            if child < self.N and less(self.keys[self.pq[child]], self.keys[self.pq[child+1]]):
+                child = child+1
+            if less(self.keys[self.pq[child]], self.keys[self.pq[k]]):
+                exchange(self.pq, k, child)
+                self.qp[self.pq[k]] = k
+                self.qp[self.pq[child]] = child
+                k = child
+            else:
+                break
+
+    def is_empty(self):
+        return self.N == 0
+
+    def size(self):
+        return self.N
