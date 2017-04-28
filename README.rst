@@ -105,6 +105,8 @@ Features:
 
     + Depth First Reverse Post Order
 
+  - Directed Cycle Detection
+
   - Minimum Spanning Tree
 
     + Kruskal
@@ -114,6 +116,13 @@ Features:
   - Shortest Path
 
     + Dijkstra
+    + Topological Sort (for directed acyclic graph, namely dag)
+
+* Strings
+
+  - String Sorting
+
+    + LSD (Least Significant Digit first radix sorting)
 
 Usage:
 ======
@@ -702,6 +711,17 @@ Shortest Path (Topological Sort)
             print(str(s) + ' is connected to ' + str(v))
             print('shortest path is ' + ' .. '.join([str(i) for i in dijkstra.shortestPathTo(v)]))
             print('path length is ' + str(dijkstra.path_length_to(v)))
+
+
+Strings
+-------
+
+LSD
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.sorting import LSD
+    LSD.sort(['good', 'cool', 'done', 'come'])
 
 
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
