@@ -6,3 +6,4 @@ Algorithms
 
    algorithms-commons
    algorithms-graphs
+   algorithms-strings
