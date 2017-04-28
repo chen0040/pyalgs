@@ -9,5 +9,6 @@ Graphs
    graphs-search
    graphs-connectivity
    graphs-topological-sort
+   graphs-cylic
    graphs-mst
    graphs-shortest-path

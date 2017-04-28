@@ -1,5 +1,5 @@
 from pyalgs.data_structures.commons.stack import Stack
-from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph
+from pyalgs.data_structures.graphs.graph import EdgeWeightedGraph, DirectedEdgeWeightedGraph
 
 
 class DepthFirstOrder(object):
@@ -8,6 +8,9 @@ class DepthFirstOrder(object):
     reversePostOrder = None
 
     def __init__(self, G):
+        if isinstance(G, DirectedEdgeWeightedGraph):
+            G = G.to_digraph()
+
         self.reversePostOrder = Stack.create()
         vertex_count = G.vertex_count()
         self.marked = [False] * vertex_count

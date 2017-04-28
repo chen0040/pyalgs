@@ -1,6 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 from pyalgs.algorithms.commons import util
+from pyalgs.algorithms.graphs.topological_sort import DepthFirstOrder
 from pyalgs.data_structures.commons.priority_queue import IndexMinPQ
 from pyalgs.data_structures.commons.stack import Stack
 from pyalgs.data_structures.graphs.graph import Digraph, Graph, EdgeWeightedGraph
@@ -15,6 +16,10 @@ class ShortestPath(object):
 
     @abstractmethod
     def hasPathTo(self, v):
+        pass
+
+    @abstractmethod
+    def path_length_to(self, v):
         pass
 
 
@@ -72,6 +77,53 @@ class DijkstraShortestPath(ShortestPath):
             x = self.edgeTo[x].start()
 
         return path.iterate()
+
+    def path_length_to(self, v):
+        return self.cost[v]
+
+
+class TopologicalSortShortestPath(ShortestPath):
+
+    marked = None
+    edgeTo = None
+    cost = None
+    s = 0
+
+    def __init__(self, G, s):
+        vertex_count = G.vertex_count()
+        self.marked = [False] * vertex_count
+        self.edgeTo = [None] * vertex_count
+        self.cost = [float('inf')] * vertex_count
+        self.s = s
+
+        dfo = DepthFirstOrder(G)
+        orders = dfo.postOrder()
+
+        self.cost[s] = 0
+
+        for v in orders:
+            for e in G.adj(v):
+                self.relax(e)
+
+    def relax(self, e):
+        v = e.start()
+        w = e.end()
+        if self.cost[w] > self.cost[v] + e.weight:
+            self.cost[w] = self.cost[v] + e.weight
+            self.edgeTo[w] = e
+            self.marked[w] = True
+
+    def shortestPathTo(self, v):
+        path = Stack.create()
+        x = v
+        while x != self.s:
+            path.push(self.edgeTo[x])
+            x = self.edgeTo[x].start()
+
+        return path.iterate()
+
+    def hasPathTo(self, v):
+        return self.marked[v]
 
     def path_length_to(self, v):
         return self.cost[v]

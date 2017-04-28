@@ -647,6 +647,31 @@ Minimum Spanning Tree (Prim Lazy)
     for e in tree:
         print(e)
 
+
+Minimum Spanning Tree (Prim Eager)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.minimum_spanning_trees import EagerPrimMST
+    g = create_edge_weighted_graph()
+    mst = EagerPrimMST(g)
+
+    tree = mst.spanning_tree()
+
+    for e in tree:
+        print(e)
+
+
+Directed Cycle Detection:
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.directed_cycle import DirectedCycle
+    dag = create_dag()
+        dc = DirectedCycle(dag)
+        assertFalse(dc.hasCycle())
+
+
 Shortest Path (Dijkstra)
 
 .. code-block:: python
@@ -660,6 +685,24 @@ Shortest Path (Dijkstra)
             print(str(s) + ' is connected to ' + str(v))
             print('shortest path is ' + ' .. '.join([str(i) for i in dijkstra.shortestPathTo(v)]))
             print('path length is ' + str(dijkstra.path_length_to(v)))
+
+
+Shortest Path (Topological Sort)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.graphs.shortest_path import TopologicalSortShortestPath
+    from pyalgs.algorithms.graphs.directed_cycle import DirectedCycle
+    g = create_edge_weighted_digraph()
+    assert not DirectedCycle(g).hasCycle()
+    s = 0
+    dijkstra = TopologicalSortShortestPath(g, s)
+    for v in range(1, g.vertex_count()):
+        if dijkstra.hasPathTo(v):
+            print(str(s) + ' is connected to ' + str(v))
+            print('shortest path is ' + ' .. '.join([str(i) for i in dijkstra.shortestPathTo(v)]))
+            print('path length is ' + str(dijkstra.path_length_to(v)))
+
 
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/
