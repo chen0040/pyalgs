@@ -24,7 +24,6 @@ class ShortestPath(object):
 
 
 class DijkstraShortestPath(ShortestPath):
-
     edgeTo = None
     s = 0
     pq = None
@@ -83,7 +82,6 @@ class DijkstraShortestPath(ShortestPath):
 
 
 class TopologicalSortShortestPath(ShortestPath):
-
     marked = None
     edgeTo = None
     cost = None
@@ -124,6 +122,67 @@ class TopologicalSortShortestPath(ShortestPath):
 
     def hasPathTo(self, v):
         return self.marked[v]
+
+    def path_length_to(self, v):
+        return self.cost[v]
+
+
+class BellmanFordShortestPath(ShortestPath):
+
+    s = None
+    edgeTo = None
+    cost = None
+    negativeDirectedCycle = False
+    vertexCount = 0
+
+    def __init__(self, G, s):
+        self.vertexCount = G.vertex_count()
+        self.cost = [float('inf')] * self.vertexCount
+        self.edgeTo = [None] * self.vertexCount
+
+        self.cost[s] = 0
+        self.s = s
+
+        for i in range(self.vertexCount):
+            for v in range(self.vertexCount):
+                for e in G.adj(v):
+                    self.relax(e)
+
+        for v in range(self.vertexCount):
+            for e in G.adj(v):
+                if self.relax(e):
+                    self.negativeDirectedCycle = True
+
+    def relax(self, e):
+        v = e.start()
+        w = e.end()
+
+        if self.cost[w] > self.cost[v] + e.weight:
+            self.cost[w] = self.cost[v] + e.weight
+            self.edgeTo[w] = e
+            return True
+        return False
+
+    def hasNegativeDirectedCycle(self):
+        return self.negativeDirectedCycle
+
+    def shortestPathTo(self, v):
+        path = Stack.create()
+        x = v
+        counter = 0
+        while x != self.s:
+            path.push(self.edgeTo[x])
+            if self.edgeTo[x] is None:
+                return None
+            x = self.edgeTo[x].start()
+            counter += 1
+            if counter > self.vertexCount:
+                return None
+
+        return path.iterate()
+
+    def hasPathTo(self, v):
+        return self.shortestPathTo(v) is not None
 
     def path_length_to(self, v):
         return self.cost[v]
