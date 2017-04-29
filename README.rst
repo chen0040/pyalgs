@@ -125,6 +125,10 @@ Features:
 
     + LSD (Least Significant Digit first radix sorting)
 
+  - String Search
+
+    + Brute force
+
 Usage:
 ======
 
@@ -733,7 +737,7 @@ Shortest Path (Bellman-Ford for positive and negative edge graph)
 Strings
 -------
 
-LSD
+Sort (LSD)
 
 .. code-block:: python
 
@@ -741,5 +745,13 @@ LSD
     LSD.sort(['good', 'cool', 'done', 'come'])
 
 
+Substring Search (Brute force)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.substring_search import BruteForceSubstringSearch
+    ss = BruteForceSubstringSearch('find')
+    print(ss.search_in('I can find it here'))
+    print(ss.search_in('It is not here'))
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/
