@@ -56,7 +56,8 @@ class FordFulkersonMaxFlow(object):
     def min_cut(self):
         queue = Queue.create()
         for edge in self.network.edges():
-            if edge.residual_capacity() == 0:
+            if edge.residual_capacity_to(edge.end()) == 0:
                 queue.enqueue(edge)
 
         return queue.iterate()
+

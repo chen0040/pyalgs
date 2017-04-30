@@ -10,6 +10,8 @@ class FordFulkersonMaxFlowUnitTest(unittest.TestCase):
         ff = FordFulkersonMaxFlow(network, 0, 7)
         print('max-flow: '+str(ff.max_flow_value()))
         self.assertEqual(28, ff.max_flow_value())
+        for e in ff.min_cut():
+            print('min-cut: ' + str(e))
 
 if __name__ == '__main__':
     unittest.main()

@@ -223,6 +223,9 @@ class FlowEdge(object):
         else:
             return self.v
 
+    def __str__(self):
+        return str(self.v) + ' =(' + str(self.capacity) + ', ' + str(self.flow) + ')=> ' + str(self.w)
+
 
 class FlowNetwork(object):
 
