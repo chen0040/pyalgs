@@ -240,8 +240,8 @@ class FlowNetwork(object):
         return self.adjList[v].iterate()
 
     def add_edge(self, edge):
-        self.adjList[edge.start()] = edge
-        self.adjList[edge.end()] = edge
+        self.adjList[edge.start()].add(edge)
+        self.adjList[edge.end()].add(edge)
 
     def vertex_count(self):
         return self.V
@@ -250,6 +250,6 @@ class FlowNetwork(object):
         for v in range(self.V):
             for e in self.adjList[v].iterate():
                 if e.start() == v:
-                    yield e 
+                    yield e
 
 

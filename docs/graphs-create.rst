@@ -42,7 +42,7 @@ Edge Weighted Graph
 
 .. code-block:: python
 
-    from pyalgs.data_structures.graphs.graph import EdgeWeightGraph
+    from pyalgs.data_structures.graphs.graph import EdgeWeightGraph, Edge
     def create_edge_weighted_graph():
         g = EdgeWeightedGraph(8)
         g.add_edge(Edge(0, 7, 0.16))
@@ -62,7 +62,7 @@ Directed Edge Weighted Graph
 
 .. code-block:: python
 
-    from pyalgs.data_structures.graphs.graph import DirectedEdgeWeightedGraph
+    from pyalgs.data_structures.graphs.graph import DirectedEdgeWeightedGraph, Edge
     def create_edge_weighted_digraph():
         g = DirectedEdgeWeightedGraph(8)
 
@@ -75,3 +75,30 @@ Directed Edge Weighted Graph
         g.add_edge(
             Edge(1, 2, 12.0))
         return g
+
+
+Flow Network ( for max-flow min-cut problem)
+--------------------------------------------
+
+.. code-block:: python
+
+    from pyalgs.data_structures.graphs.graph import FlowNetwork, FlowEdge
+    def create_flow_network():
+    g = FlowNetwork(8)
+    g.add_edge(FlowEdge(0, 1, 10))
+    g.add_edge(FlowEdge(0, 2, 5))
+    g.add_edge(FlowEdge(0, 3, 15))
+    g.add_edge(FlowEdge(1, 4, 9))
+    g.add_edge(FlowEdge(1, 5, 15))
+    g.add_edge(FlowEdge(1, 2, 4))
+    g.add_edge(FlowEdge(2, 5, 8))
+    g.add_edge(FlowEdge(2, 3, 4))
+    g.add_edge(FlowEdge(3, 6, 16))
+    g.add_edge(FlowEdge(4, 5, 15))
+    g.add_edge(FlowEdge(4, 7, 10))
+    g.add_edge(FlowEdge(5, 7, 10))
+    g.add_edge(FlowEdge(5, 6, 15))
+    g.add_edge(FlowEdge(6, 2, 6))
+    g.add_edge(FlowEdge(6, 7, 10))
+
+    return g

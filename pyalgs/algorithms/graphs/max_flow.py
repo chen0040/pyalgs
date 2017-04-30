@@ -42,7 +42,7 @@ class FordFulkersonMaxFlow(object):
             x = queue.dequeue()
             for e in self.network.adj(x):
                 w = e.other(x)
-                if e.residual_capacity(w) > 0:
+                if e.residual_capacity_to(w) > 0:
                     if not self.marked[w]:
                         self.marked[w] = True
                         self.edgeTo[w] = e

@@ -12,3 +12,4 @@ Graphs
    graphs-cyclic
    graphs-mst
    graphs-shortest-path
+   graphs-max-flow

@@ -7,4 +7,4 @@
     :license: BSD, see LICENSE for more details.
 """
 
-__version__ = '0.0.5'
+__version__ = '0.0.6'
