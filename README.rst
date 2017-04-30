@@ -448,6 +448,8 @@ Flow Network ( for max-flow min-cut problem)
     g.add_edge(FlowEdge(6, 7, 10))
 
     return g
+
+
 Algorithms
 ----------
 
@@ -582,6 +584,7 @@ Knuth Shuffle
     KnuthShuffle.shuffle(a)
     print(a)
 
+
 Graph
 -----
 
@@ -599,6 +602,7 @@ Depth First Search
             print(str(s) + ' is connected to ' + str(v))
             print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
 
+
 Breadth First Search
 
 .. code-block:: python
@@ -612,6 +616,7 @@ Breadth First Search
         if dfs.hasPathTo(v):
             print(str(s) + ' is connected to ' + str(v))
             print('path is ' + ' => '.join([str(i) for i in dfs.pathTo(v)]))
+
 
 Connected Components
 
@@ -632,6 +637,7 @@ This is for undirected graph
         r = randint(0, G.vertex_count()-1)
         if cc.connected(v, r):
             print(str(v) + ' is connected to ' + str(r))
+
 
 Strongly Connected Components
 
@@ -662,6 +668,7 @@ Topological Sort
     G = create_graph()
     topological_sort = DepthFirstOrder(G)
     print(' => '.join([str(i) for i in topological_sort.postOrder()]))
+
 
 Minimum Spanning Tree (Kruskal)
 
