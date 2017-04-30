@@ -166,7 +166,7 @@ class DirectedEdgeWeightedGraph(object):
     def edges(self):
         for v in range(self.V):
             for e in self.adj(v):
-                    yield e
+                yield e
 
     def to_graph(self):
         g = Graph()
@@ -182,3 +182,74 @@ class DirectedEdgeWeightedGraph(object):
             g.add_edge(e.start(), e.end())
 
         return g
+
+
+class FlowEdge(object):
+    v = 0
+    w = 0
+    capacity = 0
+    flow = 0
+
+    def __init__(self, v, w, capacity):
+        self.v = v
+        self.w = w
+        self.capacity = capacity
+
+    def residual_capacity_to(self, end_v):
+        if self.w == end_v:
+            return self.capacity - self.flow
+        elif self.v == end_v:
+            return self.flow
+        else:
+            raise ValueError('end point not belong to flow edge')
+
+    def add_residual_flow_to(self, end_v, delta):
+        if self.v == end_v:
+            self.flow -= delta
+        elif self.w == end_v:
+            self.flow += delta
+        else:
+            raise ValueError('end point not belong to flow edge')
+
+    def start(self):
+        return self.v
+
+    def end(self):
+        return self.w
+
+    def other(self, x):
+        if x == self.v:
+            return self.w
+        else:
+            return self.v
+
+
+class FlowNetwork(object):
+
+    V = None
+    adjList = None
+
+    def __init__(self, V):
+        self.V = V
+        self.adjList = [None] * V
+
+        for v in range(self.V):
+            self.adjList[v] = Bag()
+
+    def adj(self, v):
+        return self.adjList[v].iterate()
+
+    def add_edge(self, edge):
+        self.adjList[edge.start()] = edge
+        self.adjList[edge.end()] = edge
+
+    def vertex_count(self):
+        return self.V
+
+    def edges(self):
+        for v in range(self.V):
+            for e in self.adjList[v].iterate():
+                if e.start() == v:
+                    yield e 
+
+
