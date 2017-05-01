@@ -28,7 +28,7 @@ setup(
     license='BSD',
     author='Xianshun Chen',
     author_email='xs0040@gmail.com',
-    description='Python implementation of Robert Sedgwick\'s Algorithm (Part I and Part II) Coursera course',
+    description='Python implementation of algorithms on string handling, data structure, graph processing, etc',
     long_description=long_description(),
     packages=['pyalgs'],
     include_package_data=True,
