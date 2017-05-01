@@ -7,3 +7,4 @@ Strings
 
    strings-sort
    strings-substring-search
+   strings-longest-repeated-substring

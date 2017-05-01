@@ -125,6 +125,7 @@ Features:
 
 * Strings
 
+  - Longest Repeated Substring
   - String Sorting
 
     + LSD (Least Significant Digit first radix sorting)
@@ -781,6 +782,15 @@ MaxFlow MinCut (Ford-Fulkerson)
 
 Strings
 -------
+
+Longest Repeated Substring
+
+.. code-block:: python
+
+  from pyalgs.algorithms.strings.longest_repeated_substring import LongestRepeatedSubstringSearch
+  start, len = LongestRepeatedSubstringSearch.lrs('Hello World', 'World Record')
+  print('Hello World'[start:(start+len+1)])
+
 
 Sort (LSD)
 
