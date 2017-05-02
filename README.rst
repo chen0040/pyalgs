@@ -800,6 +800,17 @@ Sort (LSD)
     LSD.sort(['good', 'cool', 'done', 'come'])
 
 
+Sort (MSD)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.sorting import MSD
+    words = 'more details are provided in the docs for implementation, complexities and further info'.split(' ')
+    print(words)
+    MSD.sort(words)
+    print(words)
+
+
 Substring Search (Brute force)
 
 .. code-block:: python
