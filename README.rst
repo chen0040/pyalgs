@@ -64,6 +64,10 @@ Features:
     + Directed graph (digraph)
     + Directed edge weight graph
 
+  - Search Tries (Symbol table with string-based keys)
+
+    + R-way search tries
+
 * Algorithms
 
   - Sorting
@@ -129,6 +133,8 @@ Features:
   - String Sorting
 
     + LSD (Least Significant Digit first radix sorting)
+    + MSD (Most Significant Digit first radix sorting)
+    + 3-Ways String Quick Sort
 
   - String Search
 
@@ -449,6 +455,35 @@ Flow Network ( for max-flow min-cut problem)
     g.add_edge(FlowEdge(6, 7, 10))
 
     return g
+
+
+Symbol Table using R-ways Search Tries
+
+
+.. code-block:: python
+
+    from pyalgs.data_structures.strings.search_tries import RWaySearchTries
+    st = RWaySearchTries()
+
+    st.put("one", 1)
+    st.put("two", 2)
+    st.put("three", 3)
+    st.put("six", 6)
+    st.put("ten", 10)
+
+    for key in st.keys():
+        print(key)
+
+    print st.get("one"))
+    print st.contains_key("two")
+
+    print st.size()
+    print st.is_empty()
+
+    st.delete("one")
+    
+    for key in st.keysWithPrefix('t'):
+        print(key)
 
 
 Algorithms

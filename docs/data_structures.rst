@@ -10,6 +10,7 @@ Data Structures
    priority-queue
    symbol-table
    graph
+   search-tries
 
 
 
