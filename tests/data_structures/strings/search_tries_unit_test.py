@@ -50,7 +50,7 @@ class RWaySearchTriesUnitTest(unittest.TestCase):
         st.put('there', 2)
         st.put('this', 2)
         print('with prefix t')
-        for key in st.keysWithPrefix('t'):
+        for key in st.keys_with_prefix('t'):
             print(key)
 
 

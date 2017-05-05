@@ -31,7 +31,7 @@ class SearchTries(object):
         pass
 
     @abstractmethod
-    def keysWithPrefix(self, prefix):
+    def keys_with_prefix(self, prefix):
         pass
 
     @abstractmethod
@@ -63,7 +63,7 @@ class RWaySearchTries(SearchTries):
             return None
         return x.value
 
-    def keysWithPrefix(self, prefix):
+    def keys_with_prefix(self, prefix):
         x = self._get(self.root, prefix, 0)
         if x is None:
             return None
@@ -137,8 +137,11 @@ class RWaySearchTries(SearchTries):
         x.nodes[c] = self._put(x.nodes[c], key, value, d + 1)
         return x
 
-    def char_at(self, key, d):
+    @staticmethod
+    def char_at(key, d):
         return ord(key[d])
 
     def size(self):
         return self.N
+
+

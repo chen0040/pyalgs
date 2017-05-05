@@ -26,6 +26,6 @@ Symbol Table using R-ways Search Tries
 
     st.delete("one")
 
-    for key in st.keysWithPrefix('t'):
+    for key in st.keys_with_prefix('t'):
         print(key)
 
