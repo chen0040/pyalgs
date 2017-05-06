@@ -108,7 +108,7 @@ class RWaySearchTries(SearchTries):
         if len(key) == d:
             return x
 
-        return self._get(x.nodes[self.char_at(key, d)], key, d + 1)
+        return self._get(x.nodes[char_at(key, d)], key, d + 1)
 
     def delete(self, key):
         self.root = self._delete(self.root, key, 0)
@@ -122,7 +122,7 @@ class RWaySearchTries(SearchTries):
                 self.N -= 1
             return None
 
-        c = self.char_at(key, d)
+        c = char_at(key, d)
         x.nodes[c] = self._delete(x.nodes[c], key, d + 1)
         return x
 
@@ -138,7 +138,7 @@ class RWaySearchTries(SearchTries):
             x.value = value
             return x
 
-        c = self.char_at(key, d)
+        c = char_at(key, d)
         x.nodes[c] = self._put(x.nodes[c], key, value, d + 1)
         return x
 
@@ -146,7 +146,7 @@ class RWaySearchTries(SearchTries):
         return self.N
 
 
-class Node(object):
+class TSNode(object):
     value = None
     left = None
     mid = None
@@ -210,7 +210,7 @@ class TernarySearchTries(SearchTries):
     def _put(self, x, key, value, d):
         c = char_at(key, d)
         if x is None:
-            x = Node(c)
+            x = TSNode(c)
         compared = util.cmp(c, x.key)
         if compared < 0:
             x.left = self._put(x.left, key, value, d)
