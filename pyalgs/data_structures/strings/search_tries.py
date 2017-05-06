@@ -48,13 +48,13 @@ def char_at(key, d):
     return ord(key[d])
 
 
-class Node(object):
+class RwayNode(object):
     nodes = None
     value = None
     R = 256
 
     def __init__(self):
-        self.nodes = [None] * Node.R
+        self.nodes = [None] * RwayNode.R
 
 
 class RWaySearchTries(SearchTries):
@@ -90,7 +90,7 @@ class RWaySearchTries(SearchTries):
             queue.enqueue(prefix)
             return
 
-        for r in range(Node.R):
+        for r in range(RwayNode.R):
             self.collect(x.nodes[r], prefix + str(chr(r)), queue)
 
     def is_empty(self):
@@ -131,7 +131,7 @@ class RWaySearchTries(SearchTries):
 
     def _put(self, x, key, value, d):
         if x is None:
-            x = Node()
+            x = RwayNode()
         if len(key) == d:
             if x.value is None:
                 self.N += 1
@@ -146,7 +146,7 @@ class RWaySearchTries(SearchTries):
         return self.N
 
 
-class TSNode(object):
+class TSTNode(object):
     value = None
     left = None
     mid = None
@@ -210,7 +210,7 @@ class TernarySearchTries(SearchTries):
     def _put(self, x, key, value, d):
         c = char_at(key, d)
         if x is None:
-            x = TSNode(c)
+            x = TSTNode(c)
         compared = util.cmp(c, x.key)
         if compared < 0:
             x.left = self._put(x.left, key, value, d)
