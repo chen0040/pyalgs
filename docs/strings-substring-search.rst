@@ -11,3 +11,15 @@ Substring Search (Brute force)
     ss = BruteForceSubstringSearch('find')
     print(ss.search_in('I can find it here'))
     print(ss.search_in('It is not here'))
+
+
+Substring Search (Rabin Karp)
+-----------------------------
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.substring_search import RabinKarp
+    ss = RabinKarp('find')
+    print(ss.search_in('I can find it here'))
+    print(ss.search_in('It is not here'))
+
