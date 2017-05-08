@@ -66,3 +66,32 @@ class RabinKarp(SubstringSearch):
             if text_hash == self.patHash:
                 return i - self.M + 1
         return -1
+
+
+class BoyerMoore(SubstringSearch):
+    right = None
+    R = 256
+    pattern = None
+
+    def __init__(self, pattern):
+        self.pattern = pattern
+        self.right = [0] * BoyerMoore.R
+        for i in range(len(pattern)):
+            self.right[char_at(pattern, i)] = i
+
+    def search_in(self, text):
+        n = len(text)
+        m = len(self.pattern)
+
+        skip = 1
+        i = 0
+        while i <= n - m:
+            for j in range(m-1, -1, -1):
+                if char_at(text, i+j) != char_at(self.pattern, j):
+                    skip = max(1, j - self.right[char_at(text, i+j)])
+                    break
+                if j == 0:
+                    return i
+            i += skip
+
+        return -1

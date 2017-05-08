@@ -908,5 +908,15 @@ Substring Search (Rabin Karp)
     print(ss.search_in('It is not here'))
 
 
+Substring Search (Boyer Moore)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.substring_search import BoyerMoore
+    ss = BoyerMoore('find')
+    print(ss.search_in('I can find it here'))
+    print(ss.search_in('It is not here'))
+
+
 .. _`docs`: http://pyalgs.readthedocs.org/en/latest/
 .. _`documentation`: http://pyalgs.readthedocs.org/en/latest/
