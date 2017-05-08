@@ -5,7 +5,7 @@ from pyalgs.data_structures.commons.hashed_set import HashedSetWithSeparateChain
 
 
 class HashedSetUnitTest(unittest.TestCase):
-    def test_binarySearchTree(self):
+    def test_hashedset(self):
         set = HashedSet.create()
 
         set.add("one")

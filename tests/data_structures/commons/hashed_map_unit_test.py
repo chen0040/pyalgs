@@ -95,7 +95,7 @@ class HashedMapWithSeparateChainingUnitTest(unittest.TestCase):
 
 
 class HashedMapWithLinearProbingUnitTest(unittest.TestCase):
-    def test_binarySearchTree(self):
+    def test_hashedmap(self):
         map = HashedMapWithLinearProbing()
 
         map.put("one", 1)
