@@ -1,6 +1,7 @@
 import unittest
 
-from pyalgs.algorithms.strings.substring_search import BruteForceSubstringSearch, RabinKarp, BoyerMoore
+from pyalgs.algorithms.strings.substring_search import BruteForceSubstringSearch, RabinKarp, BoyerMoore, \
+    KnuthMorrisPratt
 from tests.algorithms.strings.util import some_text
 
 
@@ -30,6 +31,14 @@ class BoyerMooreUnitTest(unittest.TestCase):
         self.assertNotEqual(-1, ss.search_in(t))
         self.assertEqual(-1, ss.search_in('Hello World'))
 
+
+class KnuthMorrisPrattUnitTest(unittest.TestCase):
+
+    def test_search(self):
+        t = some_text()
+        ss = KnuthMorrisPratt('men')
+        self.assertNotEqual(-1, ss.search_in(t))
+        self.assertEqual(-1, ss.search_in('Hello World'))
 
 if __name__ == '__main__':
     unittest.main()

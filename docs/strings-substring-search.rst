@@ -34,3 +34,15 @@ Substring Search (Boyer Moore)
     print(ss.search_in('I can find it here'))
     print(ss.search_in('It is not here'))
 
+
+Substring Search (Knuth Morris Pratt)
+-------------------------------------
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.substring_search import KnuthMorrisPratt
+    ss = KnuthMorrisPratt('find')
+    print(ss.search_in('I can find it here'))
+    print(ss.search_in('It is not here'))
+
+

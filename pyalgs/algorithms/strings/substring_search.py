@@ -95,3 +95,37 @@ class BoyerMoore(SubstringSearch):
             i += skip
 
         return -1
+
+
+class KnuthMorrisPratt(SubstringSearch):
+
+    dfs = None
+    M = None
+    R = 256
+
+    def __init__(self, pattern):
+        self.M = len(pattern)
+
+        self.dfs = [None] * self.R
+        for i in range(self.R):
+            self.dfs[i] = [0] * self.M
+        self.dfs[0][0] = 1
+
+        X = 0
+        for j in range(self.M):
+            for i in range(self.R):
+                self.dfs[i][j] = self.dfs[i][X]
+            self.dfs[char_at(pattern, j)][j] = j+1
+            X = self.dfs[char_at(pattern, j)][X]
+
+    def search_in(self, text):
+
+        n = len(text)
+
+        j = 0
+        for i in range(n):
+            j = self.dfs[char_at(text, i)][j]
+            if j == self.M:
+                return i - self.M
+
+        return -1

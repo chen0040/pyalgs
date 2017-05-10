@@ -141,6 +141,8 @@ Features:
 
     + Brute force
     + Rabin Karp
+    + Boyer Moore
+    + Knuth Morris Pratt
 
 Usage:
 ======
@@ -914,6 +916,16 @@ Substring Search (Boyer Moore)
 
     from pyalgs.algorithms.strings.substring_search import BoyerMoore
     ss = BoyerMoore('find')
+    print(ss.search_in('I can find it here'))
+    print(ss.search_in('It is not here'))
+
+
+Substring Search (Knuth Morris Pratt)
+
+.. code-block:: python
+
+    from pyalgs.algorithms.strings.substring_search import KnuthMorrisPratt
+    ss = KnuthMorrisPratt('find')
     print(ss.search_in('I can find it here'))
     print(ss.search_in('It is not here'))
 
