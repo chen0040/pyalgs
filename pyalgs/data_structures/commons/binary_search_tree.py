@@ -166,6 +166,37 @@ class RedBlackTree(BinarySearchTree):
         x.count = 1 + _count(x.left) + _count(x.right)
         return x
 
+    def _delete(self, x, key):
+        if x is None:
+            return None
+
+        compared = cmp(key, x.key)
+        if compared < 0:
+            x.left = self._delete(x.left, key)
+        elif compared > 0:
+            x.right = self._delete(x.right, key)
+        else:
+            if x.left is None:
+                return x.right
+            elif x.right is None:
+                return x.left
+            else:
+                m = self.min(x.right)
+                m.right = self.del_min(x.right)
+                m.left = x.left
+
+                x = m
+
+        if self.is_red(x.right) and not self.is_red(x.left):
+            x = self.rotate_left(x)
+        if self.is_red(x.left) and self.is_red(x.left.left):
+            x = self.rotate_right(x)
+        if self.is_red(x.left) and self.is_red(x.right):
+            x = self.flip_colors(x)
+
+        x.count = 1 + _count(x.left) + _count(x.right)
+        return x
+
     def is_red(self, x):
         if x is None:
             return False
