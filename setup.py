@@ -8,7 +8,7 @@ Package pyalgs implements algorithms in Robert Sedgwick's Coursera course in Pyt
 import re
 import ast
 import io
-from setuptools import setup
+from setuptools import setup, find_packages
 
 _version_re = re.compile(r'__version__\s+=\s+(.*)')
 
@@ -30,8 +30,8 @@ setup(
     author_email='xs0040@gmail.com',
     description='Python implementation of algorithms on string handling, data structure, graph processing, etc',
     long_description=long_description(),
-    packages=['pyalgs'],
-    include_package_data=True,
+    packages=find_packages(exclude=['tests.*',
+                                    ]),
     zip_safe=False,
     platforms='any',
     install_requires=[],
